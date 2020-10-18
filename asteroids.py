@@ -17,6 +17,7 @@ import os
 print("Test")
 print("Hallo")
 print("Was ein Schmarren")
+print("Zweiter Versuch")
 
 
 from typing import cast
