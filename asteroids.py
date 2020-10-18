@@ -18,6 +18,7 @@ print("Test")
 print("Hallo")
 print("Was ein Schmarren")
 print("Zweiter Versuch")
+print("Nummer drei")
 
 
 from typing import cast
