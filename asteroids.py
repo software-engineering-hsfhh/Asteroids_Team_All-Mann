@@ -16,6 +16,8 @@ import os
 
 print("Test")
 print("Hallo")
+print("Was ein Schmarren")
+
 
 from typing import cast
 
