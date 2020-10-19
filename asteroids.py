@@ -21,6 +21,12 @@ ob das push und pull bei euch allen läuft und ihr im richtigen Repository seid"
 An dieser Stelle wird versucht, diesen Text zu pushen
 """
 
+"""
+Pushi
+pushi
+"""
+
+
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
