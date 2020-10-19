@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4560215-517f-4d5e-bfe2-e7eb861a9209" name="Default Changelist" comment="Basti has entered the game!" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Testbranch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1j6esfML9bY0S7ZXVeIGOaryIJc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4560215-517f-4d5e-bfe2-e7eb861a9209" name="Default Changelist" comment="" />
+      <created>1603129180438</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603129180438</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Kann hier gepusht werden, ist die Frage.">
+      <created>1603129846397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603129846397</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Basti has entered the game!">
+      <created>1603130596502</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603130596502</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Basti has entered the game!">
+      <created>1603131099468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131099468</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Basti has entered the game!">
+      <created>1603131768085</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131768085</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Kann hier gepusht werden, ist die Frage." />
+    <MESSAGE value="Basti has entered the game!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basti has entered the game!" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="354" y="135" key="#Inspections" timestamp="1603132544769">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="354" y="135" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1603132544769" />
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603131535688">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131535688" />
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1603133693280">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603133693280" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1603133693278">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603133693278" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1603133693277">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603133693277" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1603133693279">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603133693279" />
+    <state x="144" y="79" key="MergeDialog" timestamp="1603131160327">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131160327" />
+    <state x="361" y="218" key="MultipleFileMergeDialog" timestamp="1603131167710">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="361" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131167710" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1603131333225">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131333225" />
+    <state x="100" y="100" width="1240" height="700" key="ShowDiffWithBranchDialog" timestamp="1603129607933">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="ShowDiffWithBranchDialog/0.0.1440.900@0.0.1440.900" timestamp="1603129607933" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603131781062">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131781062" />
+    <state x="533" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132628830">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132628830" />
+  </component>
+</project>
