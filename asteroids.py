@@ -17,6 +17,8 @@ import os
 """Julius"""
 """Lea"""
 """Laura"""
+"""Merle"""
+
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
