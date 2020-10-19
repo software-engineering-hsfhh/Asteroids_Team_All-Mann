@@ -15,8 +15,7 @@ import arcade
 import os
 
 """Julius"""
-"""Basti"""
-
+"""Lea"""
 
 from typing import cast
 
