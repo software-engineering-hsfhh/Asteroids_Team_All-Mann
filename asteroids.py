@@ -14,18 +14,7 @@ import math
 import arcade
 import os
 
-"""Das ist ein Testtext, den ich eingefügt habe, um zu gucken, ob
-ob das push und pull bei euch allen läuft und ihr im richtigen Repository seid"""
-
-"""
-An dieser Stelle wird versucht, diesen Text zu pushen
-"""
-
-"""
-Pushi
-pushi
-bussiiiii
-"""
+"""Julius"""
 
 
 from typing import cast
