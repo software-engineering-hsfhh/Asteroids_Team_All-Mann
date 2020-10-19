@@ -20,7 +20,7 @@ import os
 """Merle"""
 """Merle"""
 """Basti"""
-""Annika""
+"""Annika"""
 
 
 from typing import cast
