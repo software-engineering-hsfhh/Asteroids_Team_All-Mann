@@ -15,9 +15,6 @@ import math
 import arcade
 import os
 
-print("Test")
-print("Hallo")
-
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
@@ -217,8 +214,14 @@ class MyGame(arcade.Window):
         Render the screen.
         """
 
+        # Change the background.
+        arcade.set_background_color(arcade.csscolor.BLACK)
+
         # This command has to happen before we start drawing
         arcade.start_render()
+
+        # Draw the background.
+        arcade.draw_circle_filled(100, 200, 20, arcade.csscolor.WHITE)
 
         # Draw all the sprites.
         self.asteroid_list.draw()
@@ -227,10 +230,10 @@ class MyGame(arcade.Window):
 
         # Put the text on the screen.
         output = f"Score: {self.score}"
-        arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
+        arcade.draw_text(output, 10, 70, arcade.color.RED, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
-        arcade.draw_text(output, 10, 50, arcade.color.WHITE, 13)
+        arcade.draw_text(output, 10, 50, arcade.color.RED, 13)
 
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
