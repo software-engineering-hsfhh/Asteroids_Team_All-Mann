@@ -20,8 +20,8 @@ from typing import cast
 STARTING_ASTEROID_COUNT = 3
 SCALE = 0.5
 OFFSCREEN_SPACE = 300
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1440
+SCREEN_HEIGHT = 800
 SCREEN_TITLE = "Asteroid Smasher"
 LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
@@ -31,6 +31,7 @@ TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
+
     def update(self):
         """ Move the sprite """
         super().update()
@@ -43,6 +44,7 @@ class ShipSprite(arcade.Sprite):
 
     Derives from arcade.Sprite.
     """
+
     def __init__(self, filename, scale):
         """ Set up the space ship. """
 
@@ -140,11 +142,44 @@ class AsteroidSprite(arcade.Sprite):
             self.center_y = TOP_LIMIT
 
 
+class Star:
+
+    def __init__(self, position_x, position_y, change_x, change_y, radius, color):
+        self.position_x = position_x
+        self.position_y = position_y
+        self.change_x = change_x
+        self.change_y = change_y
+        self.radius = radius
+        self.color = color
+
+    def draw(self):
+        # Draw the star with the instance variables we have
+        arcade.draw_circle_filled(self.position_x, self.position_y, self.radius, self.color)
+
+    def update(self):
+        #  Code to control the stars movement
+        self.position_y += self.change_y
+        self.position_x += self.change_x
+
+        if self.position_x < self.radius:
+            self.change_x *= -1
+
+        if self.position_x > SCREEN_WIDTH - self.radius:
+            self.change_x *= -1
+
+        if self.position_y < self.radius:
+            self.change_y *= -1
+
+        if self.position_y > SCREEN_HEIGHT - self.radius:
+            self.change_y *= -1
+
+
 class MyGame(arcade.Window):
     """ Main application class. """
 
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+        arcade.set_background_color(arcade.csscolor.BLACK)
 
         # Set the working directory (where we expect to find files) to the same
         # directory this .py file is in. You can leave this out of your own
@@ -152,6 +187,17 @@ class MyGame(arcade.Window):
         # as mentioned at the top of this program.
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
+
+        self.star_list = []
+
+        star = Star(50, 50, 3, 3, 15, arcade.color.WHITE)
+        self.star_list.append(star)
+
+        star = Star(100, 150, 2, 3, 15, arcade.color.WHITE)
+        self.star_list.append(star)
+
+        star = Star(100, 250, -3, -1, 15, arcade.color.WHITE)
+        self.star_list.append(star)
 
         self.frame_count = 0
 
@@ -220,8 +266,8 @@ class MyGame(arcade.Window):
         # This command has to happen before we start drawing
         arcade.start_render()
 
-        # Draw the background.
-        arcade.draw_circle_filled(100, 200, 20, arcade.csscolor.WHITE)
+        for star in self.star_list:
+            star.draw()
 
         # Draw all the sprites.
         self.asteroid_list.draw()
@@ -332,6 +378,9 @@ class MyGame(arcade.Window):
 
     def on_update(self, x):
         """ Move everything """
+
+        for star in self.star_list:
+            star.update()
 
         self.frame_count += 1
 
