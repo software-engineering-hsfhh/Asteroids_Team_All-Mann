@@ -14,16 +14,6 @@ import math
 import arcade
 import os
 
-"""Julius"""
-"""Lea"""
-"""Laura"""
-"""Merle"""
-"""Merle"""
-"""Basti"""
-"""Annika"""
-"""Valentina"""
-
-
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
@@ -170,14 +160,19 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
+        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
         self.player_sprite = None
-        self.lives = 0
+        self.lives = 3
 
         # Sounds
-        # TODO: load sounds
+        self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
+        self.hit_sound1 = arcade.load_sound(":resources:sounds/explosion1.wav")
+        self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
+        self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
+        self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -189,14 +184,22 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
+        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
         self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
-        self.lives = 0
+        self.lives = 3
 
-        # ToDo: Set up the little icons that represent the player lives.
+        # Set up the little icons that represent the player lives.
+        cur_pos = 10
+        for i in range(self.lives):
+            life = arcade.Sprite(":resources:images/space_shooter/playerLife1_orange.png", SCALE)
+            life.center_x = cur_pos + life.width
+            life.center_y = life.height
+            cur_pos += life.width
+            self.ship_life_list.append(life)
 
         # Make the asteroids
         image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
@@ -228,6 +231,7 @@ class MyGame(arcade.Window):
 
         # Draw all the sprites.
         self.asteroid_list.draw()
+        self.ship_life_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
 
@@ -240,9 +244,25 @@ class MyGame(arcade.Window):
 
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
+        # Shoot if the player hit the space bar and we aren't respawning.
         if not self.player_sprite.respawning and symbol == arcade.key.SPACE:
-            # TODO: # Shoot if the player hit the space bar and we aren't respawning.
-            pass
+            bullet_sprite = TurningSprite(":resources:images/space_shooter/laserBlue01.png", SCALE)
+            bullet_sprite.guid = "Bullet"
+
+            bullet_speed = 13
+            bullet_sprite.change_y = \
+                math.cos(math.radians(self.player_sprite.angle)) * bullet_speed
+            bullet_sprite.change_x = \
+                -math.sin(math.radians(self.player_sprite.angle)) \
+                * bullet_speed
+
+            bullet_sprite.center_x = self.player_sprite.center_x
+            bullet_sprite.center_y = self.player_sprite.center_y
+            bullet_sprite.update()
+
+            self.bullet_list.append(bullet_sprite)
+
+            arcade.play_sound(self.laser_sound)
 
         if symbol == arcade.key.LEFT:
             self.player_sprite.change_angle = 3
@@ -289,6 +309,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 3
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound1.play()
 
         elif asteroid.size == 3:
             for i in range(3):
@@ -309,6 +330,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 2
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound2.play()
 
         elif asteroid.size == 2:
             for i in range(3):
@@ -329,9 +351,10 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 1
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound3.play()
 
         elif asteroid.size == 1:
-            pass
+            self.hit_sound4.play()
 
     def on_update(self, x):
         """ Move everything """
@@ -340,7 +363,27 @@ class MyGame(arcade.Window):
 
         if not self.game_over:
             self.asteroid_list.update()
+            self.bullet_list.update()
             self.player_sprite_list.update()
+
+            for bullet in self.bullet_list:
+                asteroids = arcade.check_for_collision_with_list(bullet, self.asteroid_list)
+
+                for asteroid in asteroids:
+                    self.split_asteroid(cast(AsteroidSprite, asteroid))  # expected AsteroidSprite, got Sprite instead
+                    asteroid.remove_from_sprite_lists()
+                    bullet.remove_from_sprite_lists()
+
+                # Remove bullet if it goes off-screen
+                size = max(bullet.width, bullet.height)
+                if bullet.center_x < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_x > SCREEN_WIDTH + size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y > SCREEN_HEIGHT + size:
+                    bullet.remove_from_sprite_lists()
 
             if not self.player_sprite.respawning:
                 asteroids = arcade.check_for_collision_with_list(self.player_sprite, self.asteroid_list)
@@ -350,6 +393,7 @@ class MyGame(arcade.Window):
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
+                        self.ship_life_list.pop().remove_from_sprite_lists()
                         print("Crash")
                     else:
                         self.game_over = True
