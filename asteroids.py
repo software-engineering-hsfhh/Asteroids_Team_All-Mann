@@ -591,9 +591,11 @@ class MyGame(arcade.Window):
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
+                        arcade.start_render()
                         arcade.draw_text("Crash!",
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
+                        arcade.finish_render()
                     else:
                         self.game_over = True
                         print("Game over")
