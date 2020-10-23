@@ -402,11 +402,12 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
+        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
         self.player_sprite = None
-        self.lives = 0
+        self.lives = 3
 
         # Sounds
         # TODO: load sounds
@@ -429,6 +430,13 @@ class MyGame(arcade.Window):
         self.lives = 3
 
         # ToDo: Set up the little icons that represent the player lives.
+        cur_pos = 10
+        for i in range(self.lives):
+            life = arcade.Sprite(":resources:images/space_shooter/playerLife1_orange.png", SCALE)
+            life.center_x = cur_pos + life.width
+            life.center_y = life.height
+            cur_pos += life.width
+            self.ship_life_list.append(life)
 
         # Make the asteroids
         image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
@@ -591,17 +599,15 @@ class MyGame(arcade.Window):
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        arcade.start_render()
                         arcade.draw_text("Crash!",
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
                     else:
                         self.game_over = True
-                        arcade.start_render()
                         arcade.draw_text("Game over!",
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
+                        arcade.finish_render()
 
 
 
