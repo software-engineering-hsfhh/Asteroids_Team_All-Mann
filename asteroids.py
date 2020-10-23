@@ -15,6 +15,7 @@ import math
 import arcade
 import os
 
+
 from typing import cast
 
 import self as self
@@ -33,7 +34,6 @@ TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
-
     def update(self):
         """ Move the sprite """
         super().update()
@@ -46,7 +46,6 @@ class ShipSprite(arcade.Sprite):
 
     Derives from arcade.Sprite.
     """
-
     def __init__(self, filename, scale):
         """ Set up the space ship. """
 
@@ -471,10 +470,10 @@ class MyGame(arcade.Window):
 
         # Put the text on the screen.
         output = f"Score: {self.score}"
-        arcade.draw_text(output, 10, 70, arcade.color.RED, 13)
+        arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
-        arcade.draw_text(output, 10, 50, arcade.color.RED, 13)
+        arcade.draw_text(output, 10, 50, arcade.color.WHITE, 13)
 
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
