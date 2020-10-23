@@ -188,7 +188,7 @@ class MyGame(arcade.Window):
         self.score = 0
         self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
-        self.lives = 0
+        self.lives = 3
 
         # ToDo: Set up the little icons that represent the player lives.
 
@@ -344,7 +344,9 @@ class MyGame(arcade.Window):
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        print("Crash")
+                        arcade.draw_text("Crash!",
+                                         150, 230,
+                                         arcade.color.ANTIQUE_WHITE, 24)
                     else:
                         self.game_over = True
                         print("Game over")
