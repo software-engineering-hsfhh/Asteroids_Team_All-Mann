@@ -168,7 +168,7 @@ class MyGame(arcade.Window):
         # Set up the player
         self.score = 0
         self.player_sprite = None
-        self.lives = 3
+        self.lives = 0
 
         # Sounds
         # TODO: load sounds
@@ -183,21 +183,16 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
+        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.score = 0
+        self.score = 3
         self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
 
         # ToDo: Set up the little icons that represent the player lives.
-        cur_pos = 10
-        for i in range(self.lives):
-            life = arcade.Sprite(":resources:images/space_shooter/playerLife1_orange.png", SCALE)
-            life.center_x = cur_pos + life.width
-            life.center_y = life.height
-            cur_pos += life.width
-            self.ship_life_list.append(life)
+
 
         # Make the asteroids
         image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
@@ -231,9 +226,10 @@ class MyGame(arcade.Window):
         self.asteroid_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
+        self.ship_life_list.draw()
 
         # Put the text on the screen.
-        output = f"Score: {self.score}"
+        output = f"Lifes left: {self.score}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
@@ -269,7 +265,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-        self.score += 1
+
 
         if asteroid.size == 4:
             for i in range(3):
@@ -347,12 +343,14 @@ class MyGame(arcade.Window):
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
+                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        arcade.draw_text("Crash!",
-                                         150, 230,
+                        output_crash = "Crash!"
+                        arcade.draw_text(output_crash, 150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
+
                     else:
                         self.game_over = True
                         arcade.draw_text("Game over!",
