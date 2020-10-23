@@ -71,6 +71,7 @@ class ShipSprite(arcade.Sprite):
         self.center_x = SCREEN_WIDTH / 2
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
+        self.respawn_timer = 20
 
     def update(self):
         """
