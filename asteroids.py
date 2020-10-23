@@ -39,6 +39,7 @@ TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 
 background_sound = arcade.load_sound("51243__rutgermuller__haunting-music-1.wav")
 arcade.play_sound(background_sound)
+
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
     def update(self):
