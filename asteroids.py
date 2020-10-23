@@ -15,9 +15,6 @@ import math
 import arcade
 import os
 
-print("Test")
-print("Hallo")
-
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
@@ -30,6 +27,7 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
+
 
 
 class TurningSprite(arcade.Sprite):
@@ -329,7 +327,6 @@ class MyGame(arcade.Window):
 
     def on_update(self, x):
         """ Move everything """
-
         self.frame_count += 1
 
         if not self.game_over:
@@ -348,7 +345,6 @@ class MyGame(arcade.Window):
                         arcade.draw_text("Crash!",
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
                     else:
                         self.game_over = True
                         arcade.start_render()
@@ -356,6 +352,7 @@ class MyGame(arcade.Window):
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
                         arcade.finish_render()
+
 
 
 
