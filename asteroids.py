@@ -602,7 +602,7 @@ class MyGame(arcade.Window):
                         arcade.draw_text("Game over!",
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
+
 
 
 
