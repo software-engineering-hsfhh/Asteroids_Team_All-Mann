@@ -595,10 +595,15 @@ class MyGame(arcade.Window):
                         arcade.draw_text("Crash!",
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
                     else:
                         self.game_over = True
-                        print("Game over")
+                        arcade.start_render()
+                        arcade.draw_text("Game over!",
+                                         150, 230,
+                                         arcade.color.ANTIQUE_WHITE, 24)
+                        arcade.finish_render()
+                        arcade.run()
+
 
 
 def main():
