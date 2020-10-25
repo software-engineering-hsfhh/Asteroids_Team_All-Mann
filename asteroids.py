@@ -14,15 +14,6 @@ import math
 import arcade
 import os
 
-"""Julius"""
-"""Lea"""
-"""Laura"""
-"""Merle"""
-"""Merle"""
-"""Basti"""
-"""Annika"""
-"""Valentina"""
-
 
 from typing import cast
 
