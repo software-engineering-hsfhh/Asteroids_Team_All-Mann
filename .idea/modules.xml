@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" filepath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/Asteroids_Team_All-Mann.iml" filepath="$PROJECT_DIR$/.idea/Asteroids_Team_All-Mann.iml" />
+>>>>>>> x
     </modules>
   </component>
 </project>
