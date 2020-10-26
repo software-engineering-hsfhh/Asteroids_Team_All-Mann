@@ -333,7 +333,6 @@ class MyGame(arcade.Window):
     def on_update(self, x):
         """ Move everything """
         self.frame_count += 1
-
         if not self.game_over:
             self.asteroid_list.update()
             self.player_sprite_list.update()
