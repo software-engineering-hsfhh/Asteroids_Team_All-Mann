@@ -5,6 +5,7 @@ Shoot space rocks in this demo program created with
 Python and the Arcade library.
 
 Artwork from http://kenney.nl
+test 
 
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
@@ -14,9 +15,10 @@ import math
 import arcade
 import os
 
+print("Test")
+print("Hallo")
 
 from typing import cast
-
 
 STARTING_ASTEROID_COUNT = 3
 SCALE = 0.5
@@ -168,7 +170,6 @@ class MyGame(arcade.Window):
         self.player_sprite = None
         self.lives = 0
 
-
         # Sounds
         # TODO: load sounds
 
@@ -185,17 +186,17 @@ class MyGame(arcade.Window):
 
         # Set up the player
         self.score = 0
-        self.player_sprite = ShipSprite(":resources:images/enemies/bee.png", SCALE)
+        self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 0
 
         # ToDo: Set up the little icons that represent the player lives.
 
         # Make the asteroids
-        image_list = (":resources:images/enemies/frog_move.png",
-                      ":resources:images/enemies/ladybug.png",
-                      ":resources:images/enemies/slimeBlue_move.png",
-                      ":resources:images/enemies/sawHalf.png")
+        image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
+                      ":resources:images/space_shooter/meteorGrey_big2.png",
+                      ":resources:images/space_shooter/meteorGrey_big3.png",
+                      ":resources:images/space_shooter/meteorGrey_big4.png")
         for i in range(STARTING_ASTEROID_COUNT):
             image_no = random.randrange(4)
             enemy_sprite = AsteroidSprite(image_list[image_no], SCALE)
