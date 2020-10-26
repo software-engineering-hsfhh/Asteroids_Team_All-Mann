@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab4ed6ae-3adb-4fd5-a4f7-dba7bbc7dd2a" name="Default Changelist" comment="" />
+    <list default="true" id="f8db3b91-4f0f-4122-8675-d8e1332548c4" name="Default Changelist" comment="respawn timer" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,24 +40,54 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jQazhcMC1MaahTNjOxv2KjIkh3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1j6gaSKe1VfrpXBvgIgqzzv5Y9A" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ab4ed6ae-3adb-4fd5-a4f7-dba7bbc7dd2a" name="Default Changelist" comment="" />
-      <created>1603735979027</created>
+      <changelist id="f8db3b91-4f0f-4122-8675-d8e1332548c4" name="Default Changelist" comment="" />
+      <created>1603130019276</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603735979027</updated>
+      <updated>1603130019276</updated>
     </task>
+    <task id="LOCAL-00001" summary="Bla Ba">
+      <created>1603130398579</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603130398579</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lea hinzugefügt">
+      <created>1603130590550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603130590550</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Lea hinzugefügt">
+      <created>1603131292438</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131292438</updated>
+    </task>
+    <task id="LOCAL-00004" summary="respawn timer">
+      <created>1603458393592</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603458393593</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -85,29 +115,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Bla Ba" />
+    <MESSAGE value="Lea hinzugefügt" />
+    <MESSAGE value="respawn timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="respawn timer" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="430" y="264" key="#Notifications" timestamp="1603739065977">
+    <state x="37" y="99" key="MergeDialog" timestamp="1603132330993">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state x="430" y="264" key="#Notifications/0.23.1440.820@0.23.1440.820" timestamp="1603739065977" />
-    <state x="-12" y="87" key="MergeDialog" timestamp="1603739812569">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="37" y="99" key="MergeDialog/0.23.1440.820@0.23.1440.820" timestamp="1603132330993" />
+    <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1603131309856">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="-12" y="87" key="MergeDialog/0.23.1440.821@0.23.1440.821" timestamp="1603739812569" />
-    <state x="320" y="173" key="Vcs.Push.Dialog.v2" timestamp="1603739738062">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131309856" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1603131770579">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="173" key="Vcs.Push.Dialog.v2/0.23.1440.820@0.23.1440.820" timestamp="1603739738062" />
-    <state x="518" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603740160650">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131770579" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603458397480">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="518" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.820@0.23.1440.820" timestamp="1603740160650" />
-    <state x="463" y="153" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603739796581">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603458397480" />
+    <state x="320" y="196" key="Vcs.Push.Dialog.v2/0.23.1440.820@0.23.1440.820" timestamp="1603453584787" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603458901250">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="463" y="153" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.820@0.23.1440.820" timestamp="1603739136272" />
-    <state x="463" y="153" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.821@0.23.1440.821" timestamp="1603739796581" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603458901250" />
+    <state x="518" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.820@0.23.1440.820" timestamp="1603453605743" />
+    <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603456600786">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1603456600786" />
   </component>
 </project>
