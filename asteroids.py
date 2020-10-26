@@ -5,7 +5,6 @@ Shoot space rocks in this demo program created with
 Python and the Arcade library.
 
 Artwork from http://kenney.nl
-test 
 
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
@@ -14,6 +13,9 @@ import random
 import math
 import arcade
 import os
+
+print("Test")
+print("Hallo")
 
 from typing import cast
 
@@ -27,7 +29,6 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-
 
 
 class TurningSprite(arcade.Sprite):
@@ -71,7 +72,6 @@ class ShipSprite(arcade.Sprite):
         self.center_x = SCREEN_WIDTH / 2
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
-        self.respawn_timer = 20
 
     def update(self):
         """
@@ -163,7 +163,6 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
-        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
@@ -183,16 +182,14 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
-        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.score = 3
+        self.score = 0
         self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
-        self.lives = 3
+        self.lives = 0
 
         # ToDo: Set up the little icons that represent the player lives.
-
 
         # Make the asteroids
         image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
@@ -226,10 +223,9 @@ class MyGame(arcade.Window):
         self.asteroid_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
-        self.ship_life_list.draw()
 
         # Put the text on the screen.
-        output = f"Lifes left: {self.score}"
+        output = f"Score: {self.score}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
@@ -265,7 +261,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-
+        self.score += 1
 
         if asteroid.size == 4:
             for i in range(3):
@@ -332,7 +328,9 @@ class MyGame(arcade.Window):
 
     def on_update(self, x):
         """ Move everything """
+
         self.frame_count += 1
+
         if not self.game_over:
             self.asteroid_list.update()
             self.player_sprite_list.update()
@@ -342,24 +340,13 @@ class MyGame(arcade.Window):
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
-                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        output_crash = "Crash!"
-                        arcade.draw_text(output_crash, 150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
-
+                        print("Crash")
                     else:
                         self.game_over = True
-                        arcade.draw_text("Game over!",
-                                         150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
-
-
-
-
+                        print("Game over")
 
 
 def main():
@@ -367,7 +354,6 @@ def main():
     window = MyGame()
     window.start_new_game()
     arcade.run()
-
 
 
 if __name__ == "__main__":
