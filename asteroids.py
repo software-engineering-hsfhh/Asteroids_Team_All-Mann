@@ -582,7 +582,6 @@ class MyGame(arcade.Window):
             star.update()
 
         self.frame_count += 1
-
         if not self.game_over:
             self.asteroid_list.update()
             self.player_sprite_list.update()
