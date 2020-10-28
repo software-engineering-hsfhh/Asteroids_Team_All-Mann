@@ -14,8 +14,6 @@ import math
 import arcade
 import os
 
-print("Test")
-print("Hallo")
 
 from typing import cast
 
@@ -185,17 +183,17 @@ class MyGame(arcade.Window):
 
         # Set up the player
         self.score = 0
-        self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
+        self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 0
 
         # ToDo: Set up the little icons that represent the player lives.
 
         # Make the asteroids
-        image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
-                      ":resources:images/space_shooter/meteorGrey_big2.png",
-                      ":resources:images/space_shooter/meteorGrey_big3.png",
-                      ":resources:images/space_shooter/meteorGrey_big4.png")
+        image_list = ("Potato2.png",
+                      "Potato1.png",
+                      "Potato3.png",
+                      "Potato4.png")
         for i in range(STARTING_ASTEROID_COUNT):
             image_no = random.randrange(4)
             enemy_sprite = AsteroidSprite(image_list[image_no], SCALE)
