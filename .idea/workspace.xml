@@ -19,13 +19,17 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:Merles_DigiLab" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Testbranch" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="" />
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603132109191</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="nix">
+      <created>1603910224711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603910224711</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,7 +111,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Development" />
+                        <option value="origin/Testbranch" />
                       </list>
                     </value>
                   </entry>
@@ -115,7 +126,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merle eingefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merle eingefügt" />
+    <MESSAGE value="nix" />
+    <option name="LAST_COMMIT_MESSAGE" value="nix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="464" y="304" key="FileChooserDialogImpl" timestamp="1603131585376">
@@ -126,10 +138,15 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="747" y="324" key="Github.CreatePullRequestDialog/0.0.1440.900@0.0.1440.900" timestamp="1603128869954" />
-    <state x="288" y="79" key="MergeDialog" timestamp="1603132040417">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="288" y="96" key="MergeDialog" timestamp="1603910208230">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="288" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603132040417" />
+    <state x="288" y="96" key="MergeDialog/0.23.1440.827@0.23.1440.827" timestamp="1603910208230" />
+    <state x="471" y="195" key="MultipleFileMergeDialog" timestamp="1603910208288">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="471" y="195" key="MultipleFileMergeDialog/0.23.1440.827@0.23.1440.827" timestamp="1603910208288" />
     <state x="443" y="89" key="SettingsEditor" timestamp="1603131454821">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
