@@ -10,14 +10,12 @@ test
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
 """
-import random
 import math
-import arcade
 import os
-
+import random
 from typing import cast
 
-import self as self
+import arcade
 
 STARTING_ASTEROID_COUNT = 3
 SCALE = 0.5
