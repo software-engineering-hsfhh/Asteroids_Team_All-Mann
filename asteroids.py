@@ -432,12 +432,11 @@ class MyGame(arcade.Window):
 
         # ToDo: Set up the little icons that represent the player lives.
 
-
         # Make the asteroids
-        image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
-                      ":resources:images/space_shooter/meteorGrey_big2.png",
-                      ":resources:images/space_shooter/meteorGrey_big3.png",
-                      ":resources:images/space_shooter/meteorGrey_big4.png")
+        image_list = ("Potato2.png",
+                      "Potato1.png",
+                      "Potato3.png",
+                      "Potato4.png")
         for i in range(STARTING_ASTEROID_COUNT):
             image_no = random.randrange(4)
             enemy_sprite = AsteroidSprite(image_list[image_no], SCALE)
@@ -582,6 +581,7 @@ class MyGame(arcade.Window):
             star.update()
 
         self.frame_count += 1
+
         if not self.game_over:
             self.asteroid_list.update()
             self.player_sprite_list.update()
@@ -615,7 +615,6 @@ def main():
     window = MyGame()
     window.start_new_game()
     arcade.run()
-
 
 
 if __name__ == "__main__":
