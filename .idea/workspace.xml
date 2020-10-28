@@ -25,7 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e476e17d-6503-4333-9292-61f9c066748e" name="Default Changelist" comment="nichts" />
+    <list default="true" id="e476e17d-6503-4333-9292-61f9c066748e" name="Default Changelist" comment="nichts">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,72 +38,66 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Valentinas_Spielplatz" />
+        <entry key="$PROJECT_DIR$" value="Backgrounkmusic" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jQ6XZijNdvwyBAMC51yBPBWMzH" />
+  <component name="ProjectId" id="1j6gaSKe1VfrpXBvgIgqzzv5Y9A" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e476e17d-6503-4333-9292-61f9c066748e" name="Default Changelist" comment="" />
-      <created>1603724008380</created>
+      <changelist id="f8db3b91-4f0f-4122-8675-d8e1332548c4" name="Default Changelist" comment="" />
+      <created>1603130019276</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603724008380</updated>
+      <updated>1603130019276</updated>
     </task>
-    <task id="LOCAL-00001" summary="Adilette + Kartoffeln">
-      <created>1603732122074</created>
+    <task id="LOCAL-00001" summary="Bla Ba">
+      <created>1603130398579</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1603732122075</updated>
+      <updated>1603130398579</updated>
     </task>
-    <task id="LOCAL-00002" summary="nichts">
-      <created>1603740135943</created>
+    <task id="LOCAL-00002" summary="Lea hinzugefügt">
+      <created>1603130590550</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1603740135943</updated>
+      <updated>1603130590550</updated>
     </task>
-    <task id="LOCAL-00003" summary="d">
-      <created>1603741969396</created>
+    <task id="LOCAL-00003" summary="Lea hinzugefügt">
+      <created>1603131292438</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1603741969396</updated>
+      <updated>1603131292438</updated>
     </task>
-    <task id="LOCAL-00004" summary="d">
-      <created>1603742123684</created>
+    <task id="LOCAL-00004" summary="respawn timer">
+      <created>1603458393592</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1603742123684</updated>
+      <updated>1603458393593</updated>
     </task>
-    <task id="LOCAL-00005" summary="d">
-      <created>1603896049250</created>
+    <task id="LOCAL-00005" summary="Merge Hintergrund">
+      <created>1603899697890</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1603896049250</updated>
+      <updated>1603899697890</updated>
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
@@ -129,48 +127,39 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adilette + Kartoffeln" />
-    <MESSAGE value="nichts" />
-    <MESSAGE value="d" />
-    <option name="LAST_COMMIT_MESSAGE" value="d" />
+    <MESSAGE value="Bla Ba" />
+    <MESSAGE value="Lea hinzugefügt" />
+    <MESSAGE value="respawn timer" />
+    <MESSAGE value="Merge Hintergrund" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge Hintergrund" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="521" y="198" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603731093625">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="37" y="83" key="MergeDialog" timestamp="1603899586544">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="521" y="198" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825@0.23.1440.825" timestamp="1603731093625" />
-    <state x="257" y="84" key="MergeDialog" timestamp="1603896085113">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="37" y="83" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603899586544" />
+    <state x="37" y="99" key="MergeDialog/0.23.1440.820@0.23.1440.820" timestamp="1603132330993" />
+    <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1603899632047">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="257" y="84" key="MergeDialog/0.23.1440.825@0.23.1440.825" timestamp="1603896085113" />
-    <state x="471" y="193" key="MultipleFileMergeDialog" timestamp="1603896108204">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603899632047" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1603131770579">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="471" y="193" key="MultipleFileMergeDialog/0.23.1440.825@0.23.1440.825" timestamp="1603896108204" />
-    <state x="471" y="195" key="MultipleFileMergeDialog/0.23.1440.833@0.23.1440.833" timestamp="1603742079331" />
-    <state x="346" y="140" width="994" height="604" key="ShowDiffWithBranchDialog" timestamp="1603896897465">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131770579" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603901015187">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="346" y="140" width="994" height="604" key="ShowDiffWithBranchDialog/0.23.1440.825@0.23.1440.825" timestamp="1603896897465" />
-    <state x="346" y="141" width="994" height="608" key="ShowDiffWithBranchDialog/0.23.1440.831@0.23.1440.831" timestamp="1603739308981" />
-    <state x="346" y="141" width="994" height="609" key="ShowDiffWithBranchDialog/0.23.1440.832@0.23.1440.832" timestamp="1603739884182" />
-    <state x="346" y="141" width="994" height="609" key="ShowDiffWithBranchDialog/0.23.1440.833@0.23.1440.833" timestamp="1603742059463" />
-    <state x="383" y="184" key="Vcs.Push.Dialog.v2" timestamp="1603896222962">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603901015187" />
+    <state x="320" y="196" key="Vcs.Push.Dialog.v2/0.23.1440.820@0.23.1440.820" timestamp="1603453584787" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603458901250">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="383" y="184" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1603896222962" />
-    <state x="383" y="186" key="Vcs.Push.Dialog.v2/0.23.1440.833@0.23.1440.833" timestamp="1603740059343" />
-    <state x="573" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603896053354">
-      <screen x="0" y="23" width="1440" height="825" />
+    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603458901250" />
+    <state x="518" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.820@0.23.1440.820" timestamp="1603453605743" />
+    <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603456600786">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="573" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.825@0.23.1440.825" timestamp="1603896053354" />
-    <state x="573" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.832@0.23.1440.832" timestamp="1603742432331" />
-    <state x="573" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.833@0.23.1440.833" timestamp="1603742071843" />
-    <state x="475" y="165" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603739973361">
-      <screen x="0" y="23" width="1440" height="833" />
-    </state>
-    <state x="475" y="165" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.831@0.23.1440.831" timestamp="1603739298505" />
-    <state x="475" y="165" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.832@0.23.1440.832" timestamp="1603739839619" />
-    <state x="475" y="165" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.833@0.23.1440.833" timestamp="1603739973361" />
+    <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1603456600786" />
   </component>
 </project>
