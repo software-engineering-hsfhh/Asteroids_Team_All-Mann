@@ -25,8 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" afterDir="false" />
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Musik">
       <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603910224711</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Musik">
+      <created>1603912191418</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603912191418</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,7 +137,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merle eingefügt" />
     <MESSAGE value="nix" />
-    <option name="LAST_COMMIT_MESSAGE" value="nix" />
+    <MESSAGE value="Musik" />
+    <option name="LAST_COMMIT_MESSAGE" value="Musik" />
   </component>
   <component name="WindowStateProjectService">
     <state x="464" y="304" key="FileChooserDialogImpl" timestamp="1603131585376">
@@ -155,10 +162,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131454821" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603131075055">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1603912198046">
+      <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1603912198046" />
     <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
