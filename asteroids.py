@@ -9,22 +9,19 @@ Artwork from http://kenney.nl
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
 """
-import random
 import math
-import arcade
 import os
-
-
+import random
 from typing import cast
 
-import self as self
+import arcade
 
 STARTING_ASTEROID_COUNT = 10
 SCALE = 0.5
 OFFSCREEN_SPACE = 300
 SCREEN_WIDTH = 1440
 SCREEN_HEIGHT = 1000
-SCREEN_TITLE = "Asteroid Smasher"
+SCREEN_TITLE = "Alman Achims awesome All-Adventure"
 LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
