@@ -38,6 +38,9 @@ class TurningSprite(arcade.Sprite):
         super().update()
         self.angle = math.degrees(math.atan2(self.change_y, self.change_x))
 
+background_sound = arcade.load_sound("bayerischemusik.wav")
+arcade.play_sound(background_sound)
+
 
 class ShipSprite(arcade.Sprite):
     """
