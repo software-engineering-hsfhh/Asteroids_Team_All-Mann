@@ -425,7 +425,7 @@ class MyGame(arcade.Window):
 
         # Set up the player
         self.score = 3
-        self.player_sprite = ShipSprite(":resources:images/space_shooter/playerShip1_orange.png", SCALE)
+        self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
 
