@@ -37,7 +37,7 @@ RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 
-background_sound = arcade.load_sound("2239154__reinsamba__traditional-bavarian-folk-music2.wav")
+background_sound = arcade.load_sound("239154__reinsamba__traditional-bavarian-folk-music2.wav")
 arcade.play_sound(background_sound)
 
 class TurningSprite(arcade.Sprite):
