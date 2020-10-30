@@ -13,8 +13,6 @@ import random
 import math
 import arcade
 import os
-
-
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
@@ -22,7 +20,7 @@ SCALE = 0.5
 OFFSCREEN_SPACE = 300
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
-SCREEN_TITLE = "Asteroid Smasher"
+SCREEN_TITLE = "All-Mann"
 LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
