@@ -179,6 +179,17 @@ class Star:
         if self.position_x < 0:
             self.reset_pos()
 
+SPRITE_SCALING = 1
+
+
+class Collectable(arcade.Sprite):
+    """ This class represents something the player collects. """
+
+    def __init__(self, filename, scale):
+        super().__init__(filename, scale)
+        # Flip this once the coin has been collected.
+        self.changed = False
+
 
 class MyGame(arcade.Window):
     """ Main application class. """
@@ -429,6 +440,20 @@ class MyGame(arcade.Window):
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
 
+        #coins
+        for i in range(50):
+            # Create the coin instance
+            coin = Collectable (":resources:images/items/coinGold.png", SPRITE_SCALING)
+            coin.width = 30
+            coin.height = 30
+
+            # Position the coin
+            coin.center_x = random.randrange(SCREEN_WIDTH)
+            coin.center_y = random.randrange(SCREEN_HEIGHT)
+
+            # Add the coin to the lists
+            self.coin_list.append(coin)
+
         # ToDo: Set up the little icons that represent the player lives.
 
         # Make the asteroids
@@ -472,12 +497,48 @@ class MyGame(arcade.Window):
         self.ship_life_list.draw()
 
         # Put the text on the screen.
+        output = f"Score: {self.score}"
+        arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
+
+        # Coins: Put the text on the screen.
         output = f"Lifes left: {self.score}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
         arcade.draw_text(output, 10, 50, arcade.color.WHITE, 13)
 
+        #Coins:
+    def on_mouse_motion(self, x, y, dx, dy):
+        """
+        Called whenever the mouse moves.
+        """
+        self.player_sprite.center_x = x
+        self.player_sprite.center_y = y
+
+    def on_update(self, delta_time):
+        """ Movement and game logic """
+
+        # Call update on all sprites (The sprites don't do much in this
+        # example though.)
+        self.player_list.update()
+        self.coin_list.update()
+
+        # Generate a list of all sprites that collided with the player.
+        hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
+
+        # Loop through each colliding sprite, change it, and add to the score.
+        for coin in hit_list:
+            # Have we collected this?
+            if not coin.changed:
+                # No? Then do so
+                coin.append_texture(arcade.load_texture(":resources:images/pinball/bumper.png"))
+                coin.set_texture(1)
+                coin.changed = True
+                coin.width = 30
+                coin.height = 30
+                self.score += 1
+
+#coin-Ende
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
         if not self.player_sprite.respawning and symbol == arcade.key.SPACE:
@@ -604,9 +665,6 @@ class MyGame(arcade.Window):
                                          150, 230,
                                          arcade.color.ANTIQUE_WHITE, 24)
                         arcade.finish_render()
-
-
-
 
 
 def main():
