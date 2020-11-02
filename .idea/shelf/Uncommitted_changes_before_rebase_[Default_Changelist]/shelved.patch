@@ -1,0 +1,110 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"BRANCH:origin/Leben\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </select>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f8db3b91-4f0f-4122-8675-d8e1332548c4\" name=\"Default Changelist\" comment=\"respawn timer\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"Backgrounkmusic\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1j6gaSKe1VfrpXBvgIgqzzv5Y9A\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f8db3b91-4f0f-4122-8675-d8e1332548c4\" name=\"Default Changelist\" comment=\"\" />\n      <created>1603130019276</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1603130019276</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Bla Ba\">\n      <created>1603130398579</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603130398579</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Lea hinzugefügt\">\n      <created>1603130590550</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603130590550</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Lea hinzugefügt\">\n      <created>1603131292438</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603131292438</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"respawn timer\">\n      <created>1603458393592</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1603458393593</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"5\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/Leben\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Bla Ba\" />\n    <MESSAGE value=\"Lea hinzugefügt\" />\n    <MESSAGE value=\"respawn timer\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"respawn timer\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"37\" y=\"99\" key=\"MergeDialog\" timestamp=\"1603132330993\">\n      <screen x=\"0\" y=\"23\" width=\"1440\" height=\"820\" />\n    </state>\n    <state x=\"37\" y=\"99\" key=\"MergeDialog/0.23.1440.820@0.23.1440.820\" timestamp=\"1603132330993\" />\n    <state x=\"358\" y=\"218\" key=\"MultipleFileMergeDialog\" timestamp=\"1603131309856\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"358\" y=\"218\" key=\"MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900\" timestamp=\"1603131309856\" />\n    <state x=\"221\" y=\"89\" key=\"SettingsEditor\" timestamp=\"1603131770579\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"221\" y=\"89\" key=\"SettingsEditor/0.0.1440.900@0.0.1440.900\" timestamp=\"1603131770579\" />\n    <state x=\"320\" y=\"190\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1603458397480\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"320\" y=\"190\" key=\"Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900\" timestamp=\"1603458397480\" />\n    <state x=\"320\" y=\"196\" key=\"Vcs.Push.Dialog.v2/0.23.1440.820@0.23.1440.820\" timestamp=\"1603453584787\" />\n    <state x=\"518\" y=\"371\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1603458901250\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"518\" y=\"371\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900\" timestamp=\"1603458901250\" />\n    <state x=\"518\" y=\"361\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.820@0.23.1440.820\" timestamp=\"1603453605743\" />\n    <state x=\"468\" y=\"170\" key=\"git4idea.branch.GitSmartOperationDialog\" timestamp=\"1603456600786\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"468\" y=\"170\" key=\"git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900\" timestamp=\"1603456600786\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision ea02136957f14047eada356c8460e31a6b4d030b)
++++ .idea/workspace.xml	(date 1603909478919)
+@@ -21,12 +21,14 @@
+         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="BRANCH:origin/Leben" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:origin/Development" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+     </select>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f8db3b91-4f0f-4122-8675-d8e1332548c4" name="Default Changelist" comment="respawn timer" />
++    <list default="true" id="e476e17d-6503-4333-9292-61f9c066748e" name="Default Changelist" comment="nichts">
++      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -41,12 +43,14 @@
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="1j6gaSKe1VfrpXBvgIgqzzv5Y9A" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+   </component>
+@@ -87,7 +91,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1603458393593</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Merge Hintergrund">
++      <created>1603899697890</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1603899697890</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -101,7 +112,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="origin/Leben" />
++                        <option value="Development" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -118,31 +129,34 @@
+     <MESSAGE value="Bla Ba" />
+     <MESSAGE value="Lea hinzugefügt" />
+     <MESSAGE value="respawn timer" />
+-    <option name="LAST_COMMIT_MESSAGE" value="respawn timer" />
++    <MESSAGE value="Merge Hintergrund" />
++    <option name="LAST_COMMIT_MESSAGE" value="Merge Hintergrund" />
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="37" y="99" key="MergeDialog" timestamp="1603132330993">
+-      <screen x="0" y="23" width="1440" height="820" />
++    <state x="37" y="83" key="MergeDialog" timestamp="1603899586544">
++      <screen x="0" y="0" width="1440" height="900" />
+     </state>
++    <state x="37" y="83" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603899586544" />
+     <state x="37" y="99" key="MergeDialog/0.23.1440.820@0.23.1440.820" timestamp="1603132330993" />
+-    <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1603131309856">
++    <state x="358" y="218" key="MultipleFileMergeDialog" timestamp="1603899632047">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+-    <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131309856" />
++    <state x="358" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603899632047" />
+     <state x="221" y="89" key="SettingsEditor" timestamp="1603131770579">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131770579" />
+-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603458397480">
++    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603901015187">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603458397480" />
++    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603901015187" />
+     <state x="320" y="196" key="Vcs.Push.Dialog.v2/0.23.1440.820@0.23.1440.820" timestamp="1603453584787" />
+-    <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603458901250">
+-      <screen x="0" y="0" width="1440" height="900" />
++    <state x="518" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603908998485">
++      <screen x="0" y="23" width="1440" height="827" />
+     </state>
+     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603458901250" />
+     <state x="518" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.820@0.23.1440.820" timestamp="1603453605743" />
++    <state x="518" y="364" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.827@0.23.1440.827" timestamp="1603908998485" />
+     <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603456600786">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
