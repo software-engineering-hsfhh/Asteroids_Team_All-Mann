@@ -9,6 +9,7 @@ Artwork from http://kenney.nl
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
 """
+
 import math
 import os
 import random
@@ -30,10 +31,12 @@ TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
+
     def update(self):
         """ Move the sprite """
         super().update()
         self.angle = math.degrees(math.atan2(self.change_y, self.change_x))
+
 
 background_sound = arcade.load_sound("bayerischemusik.wav")
 arcade.play_sound(background_sound)
@@ -45,6 +48,7 @@ class ShipSprite(arcade.Sprite):
 
     Derives from arcade.Sprite.
     """
+
     def __init__(self, filename, scale):
         """ Set up the space ship. """
 
@@ -162,7 +166,7 @@ class Star:
 
         # Reset the coin to a random spot above the screen
         self.position_y = random.randrange(SCREEN_HEIGHT + 20,
-                                         SCREEN_HEIGHT + 100)
+                                           SCREEN_HEIGHT + 100)
         self.position_x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
@@ -406,7 +410,7 @@ class MyGame(arcade.Window):
         # Set up the player
         self.score = 0
         self.player_sprite = None
-        self.lives = 0
+        self.lives = 3
 
         # Sounds
         # TODO: load sounds
@@ -459,6 +463,7 @@ class MyGame(arcade.Window):
         # Change the background.
         arcade.set_background_color(arcade.csscolor.BLACK)
 
+
         # This command has to happen before we start drawing
         arcade.start_render()
 
@@ -508,7 +513,6 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-
 
         if asteroid.size == 4:
             for i in range(3):
@@ -594,17 +598,24 @@ class MyGame(arcade.Window):
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        output_crash = "Crash!"
-                        arcade.draw_text(output_crash, 150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
+                        #Zeige Crash! Text an, sobald der Spieler mit einem Asteroiden kollidiert
+                        i=0
+                        while i<=350:
+                            i += 1
+                            arcade.draw_text("Crash!", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
+                                             arcade.color.ANTIQUE_WHITE, 100)
+                            arcade.finish_render()
+
 
                     else:
                         self.game_over = True
-                        arcade.draw_text("Game over!",
-                                         150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
+        #Zeige Game Over Text, sobald Game_over = True ist
 
+        while self.game_over:
+            arcade.start_render()
+            arcade.draw_text("Game\nOver", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, arcade.color.WHITE,
+                             font_size=80,  align="center")
+            arcade.finish_render()
 
 
 
