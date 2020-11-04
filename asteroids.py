@@ -13,6 +13,7 @@ import random
 import math
 import arcade
 import os
+
 from typing import cast
 
 STARTING_ASTEROID_COUNT = 3
@@ -159,18 +160,14 @@ class MyGame(arcade.Window):
         self.player_sprite_list = arcade.SpriteList()
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
+        self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
         self.player_sprite = None
-        self.lives = 0
+        self.lives = 3
 
         # Sounds
-        self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
-        self.hit_sound1 = arcade.load_sound(":resources:sounds/explosion1.wav")
-        self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
-        self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
-        self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -189,7 +186,7 @@ class MyGame(arcade.Window):
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 0
 
-        # ToDo: Set up the little icons that represent the player lives.
+        # Set up the little icons that represent the player lives.
 
         # Make the asteroids
         image_list = (":resources:images/space_shooter/meteorGrey_big1.png",
