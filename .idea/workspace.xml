@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
-    </list>
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Schießen und Lebensanzeige eingefügt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603910224711</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Schießen und Lebensanzeige eingefügt">
+      <created>1604504825012</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604504825012</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,7 +124,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merle eingefügt" />
     <MESSAGE value="nix" />
-    <option name="LAST_COMMIT_MESSAGE" value="nix" />
+    <MESSAGE value="Schießen und Lebensanzeige eingefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Schießen und Lebensanzeige eingefügt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="464" y="304" key="FileChooserDialogImpl" timestamp="1603131585376">
@@ -144,9 +149,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131454821" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603131075055">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="284" y="169" key="Vcs.Push.Dialog.v2" timestamp="1604504834301">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="284" y="169" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1604504834301" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
     <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
       <screen x="0" y="0" width="1440" height="900" />
