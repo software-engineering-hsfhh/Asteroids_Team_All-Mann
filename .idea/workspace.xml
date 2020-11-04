@@ -16,14 +16,7 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/Testbranch" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="">
@@ -163,5 +156,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1603357142571" />
+    <state x="305" y="59" width="670" height="676" key="search.everywhere.popup" timestamp="1604503886213">
+      <screen x="0" y="23" width="1280" height="712" />
+    </state>
+    <state x="305" y="59" width="670" height="676" key="search.everywhere.popup/0.23.1280.712@0.23.1280.712" timestamp="1604503886213" />
   </component>
 </project>
