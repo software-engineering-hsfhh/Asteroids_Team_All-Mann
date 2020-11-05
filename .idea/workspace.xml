@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Schießen und Lebensanzeige eingefügt" />
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Schießen und Lebensanzeige eingefügt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604504884033</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Schießen und Lebensanzeige eingefügt">
+      <created>1604505420240</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604505420240</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,9 +170,10 @@
     </state>
     <state x="284" y="169" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1604504908899" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
-    <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="786" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604505440136">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="786" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1604505440136" />
     <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132613057" />
     <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603357142571">
       <screen x="0" y="0" width="1440" height="900" />
