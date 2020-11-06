@@ -38,7 +38,7 @@ RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 
-winsound.PlaySound(/Users/leamusswessels/Allmann/Asteroids_Team_All-Mann/bayerischemusik.wav, winsound.SND_LOOP + winsound.SND_ASYNC)
+winsound.PlaySound(Users/leamusswessels/Allmann/Asteroids_Team_All-Mann/bayerischemusik.wav, winsound.SND_LOOP + winsound.SND_ASYNC)
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
