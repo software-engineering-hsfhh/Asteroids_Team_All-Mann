@@ -403,7 +403,8 @@ class MyGame(arcade.Window):
         self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.score = 0
+        self.lives_show = 0
+        self.score_count = 0
         self.player_sprite = None
         self.lives = 0
 
@@ -427,7 +428,8 @@ class MyGame(arcade.Window):
         self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.score = 3
+        self.lives_show = 3
+        self.score_count = 0
         self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
@@ -482,7 +484,10 @@ class MyGame(arcade.Window):
         self.player_sprite_list.draw()
 
         # Put the text on the screen.
-        output = f"Lifes left: {self.score}"
+        output = f"Lifes left: {self.lives_show}"
+        arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
+
+        output = f"Score: {self.score_count}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
@@ -639,7 +644,7 @@ class MyGame(arcade.Window):
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
-                        self.score -= 1
+                        self.lives_show -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
