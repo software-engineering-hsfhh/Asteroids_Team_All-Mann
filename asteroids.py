@@ -539,6 +539,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
+        self.score_count +=1
 
 
         if asteroid.size == 4:
