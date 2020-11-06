@@ -434,15 +434,6 @@ class MyGame(arcade.Window):
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
 
-        # Set up the little icons that represent the player lives.
-        cur_pos = 10
-        for i in range(self.lives):
-            life = arcade.Sprite(":resources:images/space_shooter/playerLife1_orange.png", SCALE)
-            life.center_x = cur_pos + life.width
-            life.center_y = life.height
-            cur_pos += life.width
-            self.ship_life_list.append(life)
-
         # Make the asteroids
         image_list = ("Potato2.png",
                       "Potato1.png",
