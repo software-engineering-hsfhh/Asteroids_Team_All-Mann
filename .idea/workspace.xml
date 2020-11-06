@@ -16,10 +16,16 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:development_new" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Schießen und Lebensanzeige eingefügt">
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Kartoffel kleiner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +49,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -89,28 +104,35 @@
       <option name="project" value="LOCAL" />
       <updated>1603910224711</updated>
     </task>
-    <task id="LOCAL-00006" summary="Schießen und Lebensanzeige eingefügt">
-      <created>1604504825012</created>
+    <task id="LOCAL-00006" summary="Musik">
+      <created>1603912191418</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1604504825012</updated>
+      <updated>1603912191418</updated>
     </task>
-    <task id="LOCAL-00007" summary="Schießen und Lebensanzeige eingefügt">
-      <created>1604504884033</created>
+    <task id="LOCAL-00007" summary="Pommes">
+      <created>1603977294510</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1604504884033</updated>
+      <updated>1603977294510</updated>
     </task>
-    <task id="LOCAL-00008" summary="Schießen und Lebensanzeige eingefügt">
-      <created>1604505420240</created>
+    <task id="LOCAL-00008" summary="Pommes">
+      <created>1603977337576</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1604505420240</updated>
+      <updated>1603977337576</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Kartoffel kleiner">
+      <created>1603977726640</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603977726640</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,10 +162,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merle eingefügt" />
     <MESSAGE value="nix" />
-    <MESSAGE value="Schießen und Lebensanzeige eingefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Schießen und Lebensanzeige eingefügt" />
+    <MESSAGE value="Musik" />
+    <MESSAGE value="Pommes" />
+    <MESSAGE value="Kartoffel kleiner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kartoffel kleiner" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="144" y="115" key="DiffContextDialog" timestamp="1603977305688">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="144" y="115" key="DiffContextDialog/0.23.1440.830@0.23.1440.830" timestamp="1603977305688" />
     <state x="464" y="304" key="FileChooserDialogImpl" timestamp="1603131585376">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -165,23 +193,19 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131454821" />
-    <state x="284" y="169" key="Vcs.Push.Dialog.v2" timestamp="1604504908899">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1603977729763">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state x="284" y="169" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1604504908899" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
-    <state x="786" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604505440136">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1603912198046" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1603977729763" />
+    <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="786" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1604505440136" />
     <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132613057" />
     <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603357142571">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1603357142571" />
-    <state x="305" y="59" width="670" height="676" key="search.everywhere.popup" timestamp="1604503886213">
-      <screen x="0" y="23" width="1280" height="712" />
-    </state>
-    <state x="305" y="59" width="670" height="676" key="search.everywhere.popup/0.23.1280.712@0.23.1280.712" timestamp="1604503886213" />
   </component>
 </project>
