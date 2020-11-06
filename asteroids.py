@@ -67,7 +67,8 @@ class WavePlayerLoop(threading.Thread) :
     # Open Wave File and start play!
     wf = wave.open(self.filepath, '/Users/leamusswessels/Allmann/Asteroids_Team_All-Mann/bayerischemusik.wav')
     player = pyaudio.PyAudio()
-
+    player = WavePlayerLoop("bayerischemusik.wav")
+    player.play()
 
     # Open Output Stream (basen on PyAudio tutorial)
     stream = player.open(format = player.get_format_from_width(wf.getsampwidth()),
