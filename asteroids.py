@@ -53,6 +53,7 @@ class ShipSprite(arcade.Sprite):
 
         # Info on where we are going.
         # Angle comes in automatically from the parent class.
+        self.respawn_timer = 20
         self.thrust = 0
         self.speed = 0
         self.max_speed = 4
@@ -72,7 +73,6 @@ class ShipSprite(arcade.Sprite):
         self.center_x = SCREEN_WIDTH / 2
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
-        self.respawn_timer = 20
 
     def update(self):
         """
@@ -180,11 +180,11 @@ class Star:
             self.reset_pos()
 
 
-class MyGame(arcade.Window):
+class MyGame(arcade.View):
     """ Main application class. """
 
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen=True)
+        super().__init__()
         arcade.set_background_color(arcade.csscolor.BLACK)
 
         # Set the working directory (where we expect to find files) to the same
@@ -492,6 +492,10 @@ class MyGame(arcade.Window):
             self.player_sprite.thrust = 0.15
         elif symbol == arcade.key.DOWN:
             self.player_sprite.thrust = -.2
+        elif symbol == arcade.key.ESCAPE:
+            # pass self, the current view, to preserve this view's state
+            pause = PauseView(self)
+            self.window.show_view(pause)
 
     def on_key_release(self, symbol, modifiers):
         """ Called whenever a key is released. """
@@ -606,6 +610,45 @@ class MyGame(arcade.Window):
                         arcade.finish_render()
 
 
+class PauseView(arcade.Window):
+    def __init__(self, MyGame):
+        super().__init__()
+        self.game_view = MyGame
+
+    def on_show(self):
+        arcade.set_background_color(arcade.color.LIGHT_BLUE)
+
+    def on_draw(self):
+        arcade.start_render()
+
+        # Draw player, for effect, on pause screen.
+        # The previous View (GameView) was passed in
+        # and saved in self.game_view.
+        player_sprite = self.game_view.player_sprite
+        player_sprite.draw()
+
+        # draw an filter over him
+        arcade.draw_lrtb_rectangle_filled(left=player_sprite.left,
+                                          right=player_sprite.right,
+                                          top=player_sprite.top,
+                                          bottom=player_sprite.bottom,
+                                          color=arcade.color.LIGHT_BLUE + (200,))
+
+        arcade.draw_text("PAUSED", SCREEN_WIDTH/2, SCREEN_HEIGHT/2+50,
+                         arcade.color.BLACK, font_size=50, anchor_x="center")
+
+        # Show tip to return
+        arcade.draw_text("Press Esc. to return",
+                         SCREEN_WIDTH/2,
+                         SCREEN_HEIGHT/2,
+                         arcade.color.BLACK,
+                         font_size=20,
+                         anchor_x="center")
+
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ESCAPE:   # resume game
+            self.window.show_view(self.game_view)
 
 
 
