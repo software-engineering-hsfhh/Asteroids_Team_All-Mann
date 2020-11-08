@@ -39,34 +39,25 @@ und fügen Sie anstatt [Link] ihren Github Link ein.
 10. Haben Sie diese Schritte richtig befolgt, sollte alles bereit zum Spielen sein. Geben Sie python asteroids.py ein und drücken Sie enter. Das Spiel sollte nun starten.
 Wir wünschen Ihnen viel Spaß mit Almann Achims Abenteuer im Weltall!
 
-Hier noch einmal wichtige Befehle für die Kommandozeile:
 
 
-Python    - Python starten
+Hier noch einmal die wichtigsten Befehle für die Kommandozeile:
 
-Strg-d    - Python beenden
+1. Python    - Python starten
+2. Strg-d    - Python beenden
+3. Git clone - Git einfügen
+4. Mkdir     - Neuen Ordner erstellen
+5. Ls        - Ordnerinhalt listen
+6. Pwd       - Print working directory --> Wo bin ich gerade
+7. Cd ..     - Eine Ebene höher springen
+8. Clone     - Zum ersten Mal runterladen
+9. Pip3      - Arcade installieren
+10. Push      - Hochladen
+11. Fetch     - Runterladen aber noch nicht anwenden
+12. Pull      - Herunterladen und anwenden
+13. python asteroids.py - Spiel starten
 
-Git clone - Git einfügen
 
-Mkdir     - Neuen Ordner erstellen
-
-Ls        - Ordnerinhalt listen
-
-Pwd       - Print working directory --> Wo bin ich gerade
-
-Cd ..     - Eine Ebene höher springen
-
-Clone     - Zum ersten Mal runterladen
-
-Pip3      - Arcade installieren
-
-Push      - Hochladen
-
-Fetch     - Runterladen aber noch nicht anwenden
-
-Pull      - Herunterladen und anwenden
-
-python asteroids.py - Spiel starten
 
 Steuerung des Spiels:
 
@@ -76,5 +67,7 @@ Steuerung des Spiels:
 4. Schießen Sie auf Kartoffeln, indem Sie die Leertaste drücken.
 5. Für jede frittierte Kartoffel erhalten Sie X Punkte.
 6. Ziel ist es einen möglichst hohen Score zu erreichen, bevor das Spiel endet.
+
+
 
 Wir hoffen, dass diese Readme File all Ihre Fragen beantworten konnte und dass Ihnen das Spiel gefällt :)
