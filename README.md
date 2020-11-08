@@ -48,7 +48,7 @@ Hier noch einmal die wichtigsten Befehle für die Kommandozeile:
 3. Git clone - Git einfügen
 4. Mkdir     - Neuen Ordner erstellen
 5. Ls        - Ordnerinhalt listen
-6. Pwd       - Print working directory --> Wo bin ich gerade
+6. Pwd       - Zeigt an, in welchem Ordner Sie sich befinden
 7. Cd ..     - Eine Ebene höher springen
 8. Clone     - Zum ersten Mal runterladen
 9. Pip3      - Arcade installieren
