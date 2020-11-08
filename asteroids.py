@@ -97,7 +97,7 @@ class WavePlayerLoop(threading.Thread) :
     """
     Stop playback.
     """
-    self.loop = False
+    self.loop = True
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
