@@ -41,7 +41,7 @@ Wir wünschen Ihnen viel Spaß mit Almann Achims Abenteuer im Weltall!
 
 Hier noch einmal wichtige Befehle für die Kommandozeile:
 
-Pip3      - Arcade installieren
+Pip3      - Arcade installieren \n
 Python    - Python starten
 Strg-d    - Python beenden
 Git clone - Git einfügen
