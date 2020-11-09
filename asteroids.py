@@ -606,13 +606,73 @@ class MyGame(arcade.Window):
                         arcade.finish_render()
 
 
+class MenuView(arcade.View):
+    def on_show(self):
+        arcade.set_background_color(arcade.color.WHITE)
 
+    def on_draw(self):
+        arcade.start_render()
+        arcade.draw_text("Alman-Achim's awesome All-Adventure!", SCREEN_WIDTH/2, SCREEN_HEIGHT/2,
+                         arcade.color.BLACK, font_size=50, anchor_x="center")
+        arcade.draw_text("Klick hier, um fortzufahren.", SCREEN_WIDTH/2, SCREEN_HEIGHT/2-75,
+                         arcade.color.GRAY, font_size=20, anchor_x="center")
+
+    def on_mouse_press(self, _x, _y, _button, _modifiers):
+        game = MyGame()
+        self.window.show_view(game)
+
+
+class PauseView(arcade.View):
+    def __init__(self, MyGame):
+        super().__init__()
+        self.game_view = MyGame
+
+    def on_show(self):
+        arcade.set_background_color(arcade.color.LIGHT_BLUE)
+
+    def on_draw(self):
+        arcade.start_render()
+
+        # Draw player, for effect, on pause screen.
+        # The previous View (GameView) was passed in
+        # and saved in self.game_view.
+        player_sprite = self.game_view.player_sprite
+        player_sprite.draw()
+
+        # draw an filter over him
+        arcade.draw_lrtb_rectangle_filled(left=player_sprite.left,
+                                          right=player_sprite.right,
+                                          top=player_sprite.top,
+                                          bottom=player_sprite.bottom,
+                                          color=arcade.color.LIGHT_BLUE + (200,))
+
+        arcade.draw_text("Du hast das Spiel pausiert", SCREEN_WIDTH/2, SCREEN_HEIGHT/2+50,
+                         arcade.color.BLACK, font_size=50, anchor_x="center")
+
+        # Show tip to return
+        arcade.draw_text("Drücke den Entkommen-Knopf, um fortzufahren",
+                         SCREEN_WIDTH/2,
+                         SCREEN_HEIGHT/2,
+                         arcade.color.BLACK,
+                         font_size=20,
+                         anchor_x="center")
+
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ESCAPE:   # resume game
+            self.window.show_view(self.game_view)
 
 
 def main():
     """ Start the game """
     window = MyGame()
-    window.start_new_game()
+    window.start_new_game(self=MyGame)
+
+def main():
+    """ Main method """
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen= False)
+    start_view = MenuView()
+    window.show_view(start_view)
     arcade.run()
 
 
