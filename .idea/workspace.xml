@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Kartoffel kleiner">
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Merge into alles">
       <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603977726640</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge into alles">
+      <created>1604941934834</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604941934834</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,7 +194,8 @@
     <MESSAGE value="Musik" />
     <MESSAGE value="Pommes" />
     <MESSAGE value="Kartoffel kleiner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kartoffel kleiner" />
+    <MESSAGE value="Merge into alles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge into alles" />
   </component>
   <component name="WindowStateProjectService">
     <state x="144" y="115" key="DiffContextDialog" timestamp="1603977305688">

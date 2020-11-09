@@ -194,7 +194,7 @@ class MyGame(arcade.View):
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
 
-        self.star_list = []
+        """self.star_list = []
 
         star = Star(720, 400, -3, -2, 3, arcade.color.CELESTIAL_BLUE)
         self.star_list.append(star)
@@ -391,7 +391,7 @@ class MyGame(arcade.View):
         self.star_list.append(star)
 
         star = Star(270, 730, -2, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
+        self.star_list.append(star)"""
 
         self.frame_count = 0
 
@@ -462,8 +462,8 @@ class MyGame(arcade.View):
         # This command has to happen before we start drawing
         arcade.start_render()
 
-        for star in self.star_list:
-            star.draw()
+        """for star in self.star_list:
+            star.draw()"""
 
         # Draw all the sprites.
         self.asteroid_list.draw()
@@ -580,8 +580,8 @@ class MyGame(arcade.View):
     def on_update(self, x):
         """ Move everything """
 
-        for star in self.star_list:
-            star.update()
+        """for star in self.star_list:
+            star.update()"""
 
         self.frame_count += 1
 
