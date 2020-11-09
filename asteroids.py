@@ -180,11 +180,11 @@ class Star:
             self.reset_pos()
 
 
-class MyGame(arcade.Window):
+class MyGame(arcade.View):
     """ Main application class. """
 
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen=True)
+        super().__init__()
         arcade.set_background_color(arcade.csscolor.BLACK)
 
         # Set the working directory (where we expect to find files) to the same
@@ -492,6 +492,10 @@ class MyGame(arcade.Window):
             self.player_sprite.thrust = 0.15
         elif symbol == arcade.key.DOWN:
             self.player_sprite.thrust = -.2
+        elif symbol == arcade.key.ESCAPE:
+            # pass self, the current view, to preserve this view's state
+            pause = PauseView(self)
+            self.window.show_view(pause)
 
     def on_key_release(self, symbol, modifiers):
         """ Called whenever a key is released. """
