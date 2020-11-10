@@ -249,8 +249,6 @@ class MyGame(arcade.Window):
         t.start()
         print("Start Timer")
 
-
-
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
 
