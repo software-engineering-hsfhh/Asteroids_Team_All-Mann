@@ -238,7 +238,18 @@ class MyGame(arcade.Window):
         self.lives = 0
 
         # Sounds
-        # TODO: load sounds
+        background_sound = arcade.load_sound("bayerischemusik.wav")
+        arcade.play_sound(background_sound)
+
+        import threading
+        def bavarianmusic_again():
+            arcade.play_sound(background_sound)
+
+        t= threading.Timer(193.1,bavarianmusic_again)
+        t.start()
+        print("Start Timer")
+
+
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
