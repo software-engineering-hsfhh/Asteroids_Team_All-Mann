@@ -27,35 +27,7 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-NUMBER_OF_SHAPES = 60
-
-class Shape:
-    #generic base shape class
-    def __init__(self, position_x, position_y, radius, color):
-        self.position_x = position_x
-        self.position_y = position_y
-        self.radius = radius
-        self.color = color
-
-    def move(self):
-        # Move the Shapes
-        self.position_y -= 1
-        self.position_x -= 0
-
-        # See if the shapes has fallen off the bottom of the screen.
-        # If so, reset it.
-        if self.position_y < 0:
-            self.reset_pos()
-
-        if self.position_x < 0:
-            self.reset_pos()
-
-    def reset_pos(self):
-
-        # Reset the shape to a random spot above the screen
-        self.position_y = random.randrange(SCREEN_HEIGHT + 20,
-                                         SCREEN_HEIGHT + 100)
-        self.position_x = random.randrange(SCREEN_WIDTH)
+NUMBER_OF_STARS = 60
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
@@ -170,12 +142,36 @@ class AsteroidSprite(arcade.Sprite):
             self.center_y = TOP_LIMIT
 
 
-class Star(Shape):
+class Star:
+    # star class for the background
+    def __init__(self, position_x, position_y, radius, color):
+        self.position_x = position_x
+        self.position_y = position_y
+        self.radius = radius
+        self.color = color
 
     def draw(self):
         # Draw the star with the instance variables we have
         arcade.draw_circle_filled(self.position_x, self.position_y, self.radius, self.color)
 
+    def reset_pos(self):
+        # Reset the stars to a random spot above the screen
+        self.position_y = random.randrange(SCREEN_HEIGHT + 20,
+                                         SCREEN_HEIGHT + 100)
+        self.position_x = random.randrange(SCREEN_WIDTH)
+
+    def update(self):
+        # Move the stars
+        self.position_y -= 1
+        self.position_x -= 0
+
+        # See if the stars has fallen off the bottom of the screen.
+        # If so, reset it.
+        if self.position_y < 0:
+            self.reset_pos()
+
+        if self.position_x < 0:
+            self.reset_pos()
 
 class MyGame(arcade.Window):
     """ Main application class. """
@@ -209,21 +205,23 @@ class MyGame(arcade.Window):
         # Sounds
         # TODO: load sounds
 
-        self.shape_list = arcade.ShapeElementList()
+        self.star_list = []
 
-    def setup(self):
-        global shape
-        self.shape_list = []
+        color_list = [
+            arcade.color.BLUE,
+            arcade.color.WHITE,
+            arcade.color.CELESTIAL_BLUE
+        ]
 
-        for i in range(NUMBER_OF_SHAPES):
+        for i in range(NUMBER_OF_STARS):
             position_x = random.randrange(SCREEN_WIDTH)
             position_y = random.randrange(SCREEN_HEIGHT)
             radius = random.randrange(1, 2, 3)
-            color = random.randrange(arcade.color.BLUE, arcade.color.WHITE, arcade.color.CELESTIAL_BLUE)
+            color = random.choice(color_list)
 
-            shape = Star(position_x, position_y, radius, color)
+            star = Star(position_x, position_y, radius, color)
 
-            self.shape_list.append(shape)
+            self.star_list.append(star)
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -275,8 +273,8 @@ class MyGame(arcade.Window):
         # This command has to happen before we start drawing
         arcade.start_render()
 
-        for shape in self.shape_list:
-            shape.draw()
+        for star in self.star_list:
+            star.draw()
 
         # Draw all the sprites.
         self.asteroid_list.draw()
@@ -388,8 +386,8 @@ class MyGame(arcade.Window):
     def on_update(self, x):
         """ Move everything """
 
-        for shape in self.shape_list:
-            shape.move()
+        for star in self.star_list:
+            star.update()
 
         self.frame_count += 1
 
