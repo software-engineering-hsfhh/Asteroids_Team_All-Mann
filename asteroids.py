@@ -26,7 +26,7 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-
+NUMBER_OF_STARS = 60
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
@@ -144,41 +144,35 @@ class AsteroidSprite(arcade.Sprite):
 
 
 class Star:
-
-    def __init__(self, position_x, position_y, change_x, change_y, radius, color):
+    # star class for the background
+    def __init__(self, position_x, position_y, radius, color):
         self.position_x = position_x
         self.position_y = position_y
-        self.change_x = change_x
-        self.change_y = change_y
         self.radius = radius
         self.color = color
-        self.start_position = position_x, position_y
 
     def draw(self):
         # Draw the star with the instance variables we have
         arcade.draw_circle_filled(self.position_x, self.position_y, self.radius, self.color)
 
     def reset_pos(self):
-
-        # Reset the coin to a random spot above the screen
+        # Reset the stars to a random spot above the screen
         self.position_y = random.randrange(SCREEN_HEIGHT + 20,
                                          SCREEN_HEIGHT + 100)
         self.position_x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
-
         # Move the stars
         self.position_y -= 1
         self.position_x -= 0
 
-        # See if the star has fallen off the bottom of the screen.
+        # See if the stars has fallen off the bottom of the screen.
         # If so, reset it.
         if self.position_y < 0:
             self.reset_pos()
 
         if self.position_x < 0:
             self.reset_pos()
-
 
 class MyGame(arcade.Window):
     """ Main application class. """
@@ -187,211 +181,13 @@ class MyGame(arcade.Window):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen=True)
         arcade.set_background_color(arcade.csscolor.BLACK)
 
+
         # Set the working directory (where we expect to find files) to the same
         # directory this .py file is in. You can leave this out of your own
         # code, but it is needed to easily run the examples using "python -m"
         # as mentioned at the top of this program.
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
-
-        self.star_list = []
-
-        star = Star(720, 400, -3, -2, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 1, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 2, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, -2, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, -3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, -3, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # slower moving stars
-
-        star = Star(720, 400, -1, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, -1, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 1, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, -2, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 2, 1, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 2, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 2, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -2, 1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -2, -1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # stars not starting in the center
-        star = Star(500, 350, -3, -2, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(400, 310, 3, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(350, 260, -3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(200, 230, 1, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(600, 470, 1, 3, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(510, 540, 3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(370, 600, -3, 2, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(200, 690, 3, -2, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(750, 380, -3, -3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(800, 310, 3, 3, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(900, 250, -3, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1050, 150, 0, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(1200, 620, 0, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1340, 680, 3, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(1400, 710, -3, 3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1410, 750, 3, -3, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # slower moving stars
-
-        star = Star(800, 450, -1, -1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(990, 600, 1, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(1100, 680, -1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1250, 750, 0, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(850, 370, 0, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(970, 280, 1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1170, 170, -1, 1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1350, 60, 1, -1, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(600, 350, -1, -2, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(540, 210, 1, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(500, 180, -1, 2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(410, 100, 2, -1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(600, 470, 2, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(540, 610, 1, -2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(410, 690, -2, 1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(270, 730, -2, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
 
         self.frame_count = 0
 
@@ -410,6 +206,24 @@ class MyGame(arcade.Window):
 
         # Sounds
         # TODO: load sounds
+
+        self.star_list = []
+
+        color_list = [
+            arcade.color.BLUE,
+            arcade.color.WHITE,
+            arcade.color.CELESTIAL_BLUE
+        ]
+
+        for i in range(NUMBER_OF_STARS):
+            position_x = random.randrange(SCREEN_WIDTH)
+            position_y = random.randrange(SCREEN_HEIGHT)
+            radius = random.randrange(1, 2, 3)
+            color = random.choice(color_list)
+
+            star = Star(position_x, position_y, radius, color)
+
+            self.star_list.append(star)
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
