@@ -599,10 +599,10 @@ class MyGame(arcade.Window):
                         asteroids[0].remove_from_sprite_lists()
 
                         # Zeige "Crash!" Text an, sobald der Spieler mit einem Asteroiden kollidiert.
-                        #Zeige "Crash!" so lange an, bis i=240 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
-                        i = 0
-                        while i <= 240:
-                            i += 1
+                        #Zeige "Crash!" so lange an, bis i=20 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
+                        i = 0.0
+                        while i <= 20:
+                            i += 0.1
                             start_x = SCREEN_WIDTH / 2
                             start_y = SCREEN_HEIGHT / 2
                             arcade.draw_text("Crash!", start_x, start_y,
@@ -612,8 +612,8 @@ class MyGame(arcade.Window):
 
                     else:
                         self.game_over = True
-                        # Zeige Game Over Text, sobald Game_over = True ist
 
+                    # Zeige Game Over Text, sobald Game_over = True ist
                     while self.game_over:
                         arcade.start_render()
                         arcade.draw_text("Du hast verloren\nChristian!\n", start_x, start_y, arcade.color.WHITE,
