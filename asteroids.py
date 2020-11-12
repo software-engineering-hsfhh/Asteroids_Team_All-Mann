@@ -251,6 +251,10 @@ class MyGame(arcade.Window):
         t.start()
         print("Start Timer")
 
+        t=threading.Timer(386.1,bavarianmusic_again)
+        t.start()
+        print("Start Timer2")
+
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
 
