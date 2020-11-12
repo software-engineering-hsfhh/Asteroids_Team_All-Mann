@@ -16,10 +16,29 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
+<<<<<<< HEAD
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4560215-517f-4d5e-bfe2-e7eb861a9209" name="Default Changelist" comment="Basti has entered the game!" />
+=======
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Branch_Anni_Schiessen" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Kartoffel kleiner">
+      <change beforePath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
+    </list>
+>>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,12 +47,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="Testbranch" />
+=======
+        <entry key="$PROJECT_DIR$" value="fb08a42bbf92243c76226b6af1a6d49de31603e2" />
+>>>>>>> origin/main
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="1j6esfML9bY0S7ZXVeIGOaryIJc" />
+=======
+  <component name="ProjectId" id="1j6dI0V78KHxSVi7szPokrBmENm" />
+>>>>>>> origin/main
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,11 +68,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+>>>>>>> origin/main
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="b4560215-517f-4d5e-bfe2-e7eb861a9209" name="Default Changelist" comment="" />
       <created>1603129180438</created>
       <option name="number" value="Default" />
@@ -81,6 +122,78 @@
       <updated>1603131768085</updated>
     </task>
     <option name="localTasksCounter" value="5" />
+=======
+      <changelist id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="" />
+      <created>1603128394533</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603128394533</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Merle eingefügt">
+      <created>1603130881676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603130881676</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merle eingefügt">
+      <created>1603131034973</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131034973</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merle eingefügt">
+      <created>1603131297588</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131297588</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merle eingefügt">
+      <created>1603132109191</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603132109191</updated>
+    </task>
+    <task id="LOCAL-00005" summary="nix">
+      <created>1603910224711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603910224711</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Musik">
+      <created>1603912191418</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603912191418</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pommes">
+      <created>1603977294510</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603977294510</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Pommes">
+      <created>1603977337576</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603977337576</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Kartoffel kleiner">
+      <created>1603977726640</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603977726640</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+>>>>>>> origin/main
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,11 +201,28 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State />
+=======
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Testbranch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+>>>>>>> origin/main
           </value>
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Kann hier gepusht werden, ist die Frage." />
@@ -148,5 +278,57 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132628830" />
+=======
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merle eingefügt" />
+    <MESSAGE value="nix" />
+    <MESSAGE value="Musik" />
+    <MESSAGE value="Pommes" />
+    <MESSAGE value="Kartoffel kleiner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kartoffel kleiner" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="144" y="115" key="DiffContextDialog" timestamp="1603977305688">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="144" y="115" key="DiffContextDialog/0.23.1440.830@0.23.1440.830" timestamp="1603977305688" />
+    <state x="464" y="304" key="FileChooserDialogImpl" timestamp="1603131585376">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="464" y="304" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1603131585376" />
+    <state x="747" y="324" key="Github.CreatePullRequestDialog" timestamp="1603128869954">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="747" y="324" key="Github.CreatePullRequestDialog/0.0.1440.900@0.0.1440.900" timestamp="1603128869954" />
+    <state x="288" y="96" key="MergeDialog" timestamp="1603910208230">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="288" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603132040417" />
+    <state x="288" y="96" key="MergeDialog/0.23.1440.827@0.23.1440.827" timestamp="1603910208230" />
+    <state x="471" y="195" key="MultipleFileMergeDialog" timestamp="1603910208288">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="471" y="195" key="MultipleFileMergeDialog/0.23.1440.827@0.23.1440.827" timestamp="1603910208288" />
+    <state x="443" y="89" key="SettingsEditor" timestamp="1603131454821">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="443" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131454821" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1603977729763">
+      <screen x="0" y="23" width="1440" height="830" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1603912198046" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1603977729763" />
+    <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132613057" />
+    <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603357142571">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1603357142571" />
+>>>>>>> origin/main
   </component>
 </project>
