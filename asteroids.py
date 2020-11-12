@@ -72,7 +72,7 @@ class ShipSprite(arcade.Sprite):
         self.center_x = SCREEN_WIDTH / 2
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
-        self.respawn_timer = 20
+        self.respawn_timer = 10
 
     def update(self):
         """
@@ -245,7 +245,7 @@ class MyGame(arcade.Window):
         self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.score = 3
+        self.score = 0
         self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
@@ -298,7 +298,7 @@ class MyGame(arcade.Window):
         output = f"Lives left: {self.lives}"
         arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
 
-        output = f"Score: {self.score_count}"
+        output = f"Score: {self.score}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
@@ -307,7 +307,7 @@ class MyGame(arcade.Window):
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
         # Shoot if the player hit the space bar and we aren't respawning.
-        if not self.player_sprite.respawning and symbol == arcade.key.SPACE:
+        if symbol == arcade.key.SPACE:
             bullet_sprite = TurningSprite(":resources:images/space_shooter/laserBlue01.png", SCALE)
             bullet_sprite.guid = "Bullet"
 
@@ -350,7 +350,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-        self.score_count +=50
+        self.score +=50
 
 
         if asteroid.size == 4:
@@ -382,7 +382,6 @@ class MyGame(arcade.Window):
 
                 enemy_sprite = AsteroidSprite(image_list[image_no],
                                               SCALE * 1.5)
-
                 enemy_sprite.center_y = y
                 enemy_sprite.center_x = x
 
@@ -457,7 +456,6 @@ class MyGame(arcade.Window):
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
-                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
