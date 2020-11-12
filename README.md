@@ -32,7 +32,7 @@ Wenn Sie den Ordner erstellt haben, können Sie erneut Mkdir eingeben, um zu üb
 7. Wir hoffen, dass Sie immer noch den Link in Ihrer Zwischenablage kopiert haben, denn nun ist es so weit, dass Sie das Repository klonen. Geben Sie "Git Clone [Link]" ein
 und fügen Sie anstatt [Link] ihren Github Link ein.
 
-8. Das Spiel nutzt ein System namens Arcade, dass Sie ebenfalls auf ihrem Computer installieren müssen, indem Sie Pip3 install arcade im Terminal eingeben.
+8. Das Spiel nutzt ein System namens Arcade, dass Sie ebenfalls auf ihrem Computer installieren müssen, indem Sie pip3 install arcade im Terminal eingeben.
 
 9. Zuletzt müssen Sie noch Python starten, indem Sie einfach Python eingeben und Enter drücken.
 
