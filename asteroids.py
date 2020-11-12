@@ -10,13 +10,10 @@ test
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
 """
-import random
 import math
-import arcade
 import os
 import random
 from typing import cast
-
 import arcade
 
 STARTING_ASTEROID_COUNT = 10
@@ -29,7 +26,7 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-NUMBER_OF_STARS = 60
+NUMBER_OF_STARS = 101
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
@@ -156,8 +153,6 @@ class Star:
     def __init__(self, position_x, position_y, radius, color):
         self.position_x = position_x
         self.position_y = position_y
-        self.change_x = change_x
-        self.change_y = change_y
         self.radius = radius
         self.color = color
         self.start_position = position_x, position_y
@@ -201,205 +196,6 @@ class MyGame(arcade.Window):
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
 
-        self.star_list = []
-
-        star = Star(720, 400, -3, -2, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 1, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 2, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, -2, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, -3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, -3, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # slower moving stars
-
-        star = Star(720, 400, -1, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, -1, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 1, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, -2, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 2, 1, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 2, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 2, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -2, 1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -2, -1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # stars not starting in the center
-        star = Star(500, 350, -3, -2, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(400, 310, 3, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(350, 260, -3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(200, 230, 1, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(600, 470, 1, 3, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(510, 540, 3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(370, 600, -3, 2, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(200, 690, 3, -2, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(750, 380, -3, -3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(800, 310, 3, 3, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(900, 250, -3, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1050, 150, 0, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(1200, 620, 0, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1340, 680, 3, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(1400, 710, -3, 3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1410, 750, 3, -3, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # slower moving stars
-
-        star = Star(800, 450, -1, -1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(990, 600, 1, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(1100, 680, -1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1250, 750, 0, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(850, 370, 0, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(970, 280, 1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1170, 170, -1, 1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1350, 60, 1, -1, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(600, 350, -1, -2, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(540, 210, 1, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(500, 180, -1, 2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(410, 100, 2, -1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(600, 470, 2, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(540, 610, 1, -2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(410, 690, -2, 1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(270, 730, -2, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
         self.frame_count = 0
 
         self.game_over = False
@@ -415,8 +211,6 @@ class MyGame(arcade.Window):
         self.player_sprite = None
         self.lives = 0
 
-        # Sounds
-        # TODO: load sounds
 
         self.star_list = []
 
