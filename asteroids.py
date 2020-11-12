@@ -226,6 +226,24 @@ class MyGame(arcade.Window):
 
             self.star_list.append(star)
         # Sounds
+        # Load and play a background sound
+        background_sound = arcade.load_sound("bayerischemusik.wav")
+        arcade.play_sound(background_sound, 0.10)
+
+        # Use Threading to create Timer to play background sound again
+        import threading
+        def bavarianmusic_again():
+            arcade.play_sound(background_sound, 0.10)
+
+        t = threading.Timer(193.1, bavarianmusic_again)
+        t.start()
+        print("Start Timer")
+
+        t = threading.Timer(386.1, bavarianmusic_again)
+        t.start()
+        print("Start Timer2")
+
+        # Load and play laser sound
         self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
         self.hit_sound1 = arcade.load_sound(":resources:sounds/explosion1.wav")
         self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
