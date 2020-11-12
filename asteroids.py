@@ -5,7 +5,6 @@ Shoot space rocks in this demo program created with
 Python and the Arcade library.
 
 Artwork from http://kenney.nl
-test 
 
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
@@ -14,6 +13,7 @@ import math
 import os
 import random
 from typing import cast
+
 import arcade
 
 STARTING_ASTEROID_COUNT = 10
@@ -30,7 +30,6 @@ NUMBER_OF_STARS = 101
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
-
     def update(self):
         """ Move the sprite """
         super().update()
@@ -46,7 +45,6 @@ class ShipSprite(arcade.Sprite):
 
     Derives from arcade.Sprite.
     """
-
     def __init__(self, filename, scale):
         """ Set up the space ship. """
 
@@ -75,8 +73,6 @@ class ShipSprite(arcade.Sprite):
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
         self.respawn_timer = 20
-
-
 
     def update(self):
         """
@@ -229,6 +225,12 @@ class MyGame(arcade.Window):
             star = Star(position_x, position_y, radius, color)
 
             self.star_list.append(star)
+        # Sounds
+        self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
+        self.hit_sound1 = arcade.load_sound(":resources:sounds/explosion1.wav")
+        self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
+        self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
+        self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -247,8 +249,6 @@ class MyGame(arcade.Window):
         self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
-
-        # ToDo: Set up the little icons that represent the player lives.
 
         # Make the asteroids
         image_list = ("Potato2.png",
@@ -286,12 +286,19 @@ class MyGame(arcade.Window):
 
         # Draw all the sprites.
         self.asteroid_list.draw()
+        self.ship_life_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
-        self.ship_life_list.draw()
 
         # Put the text on the screen.
-        output = f"Lifes left: {self.score}"
+        # Lives left shows the lives the user has at the time, starting with the defined number (3).
+        # Score shows the summed up score, starting with the defined score (0).
+        # Asteroid count shows the number of asteroids at the screen.
+
+        output = f"Lives left: {self.lives}"
+        arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
+
+        output = f"Score: {self.score_count}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
@@ -299,9 +306,25 @@ class MyGame(arcade.Window):
 
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
+        # Shoot if the player hit the space bar and we aren't respawning.
         if not self.player_sprite.respawning and symbol == arcade.key.SPACE:
-            # TODO: # Shoot if the player hit the space bar and we aren't respawning.
-            pass
+            bullet_sprite = TurningSprite(":resources:images/space_shooter/laserBlue01.png", SCALE)
+            bullet_sprite.guid = "Bullet"
+
+            bullet_speed = 13
+            bullet_sprite.change_y = \
+                math.cos(math.radians(self.player_sprite.angle)) * bullet_speed
+            bullet_sprite.change_x = \
+                -math.sin(math.radians(self.player_sprite.angle)) \
+                * bullet_speed
+
+            bullet_sprite.center_x = self.player_sprite.center_x
+            bullet_sprite.center_y = self.player_sprite.center_y
+            bullet_sprite.update()
+
+            self.bullet_list.append(bullet_sprite)
+
+            arcade.play_sound(self.laser_sound)
 
         if symbol == arcade.key.LEFT:
             self.player_sprite.change_angle = 3
@@ -327,7 +350,8 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-        self.score += 50
+        self.score_count +=50
+
 
         if asteroid.size == 4:
             for i in range(3):
@@ -348,6 +372,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 3
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound1.play()
 
         elif asteroid.size == 3:
             for i in range(3):
@@ -368,6 +393,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 2
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound2.play()
 
         elif asteroid.size == 2:
             for i in range(3):
@@ -388,9 +414,10 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 1
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound3.play()
 
         elif asteroid.size == 1:
-            pass
+            self.hit_sound4.play()
 
     def on_update(self, x):
         """ Move everything """
@@ -402,13 +429,35 @@ class MyGame(arcade.Window):
 
         if not self.game_over:
             self.asteroid_list.update()
+            self.bullet_list.update()
             self.player_sprite_list.update()
 
+            for bullet in self.bullet_list:
+                asteroids = arcade.check_for_collision_with_list(bullet, self.asteroid_list)
+
+                for asteroid in asteroids:
+                    self.split_asteroid(cast(AsteroidSprite, asteroid))  # expected AsteroidSprite, got Sprite instead
+                    asteroid.remove_from_sprite_lists()
+                    bullet.remove_from_sprite_lists()
+
+                # Remove bullet if it goes off-screen
+                size = max(bullet.width, bullet.height)
+                if bullet.center_x < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_x > SCREEN_WIDTH + size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y > SCREEN_HEIGHT + size:
+                    bullet.remove_from_sprite_lists()
+
+            # After a collision, one life will be taken away from the players lives.
             if not self.player_sprite.respawning:
                 asteroids = arcade.check_for_collision_with_list(self.player_sprite, self.asteroid_list)
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
+                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
