@@ -428,6 +428,8 @@ class MyGame(arcade.Window):
         self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
+        # Defines number of lives (3) and the lives that are shown on screen at the beginning (3)
+        # Defines the score per asteroid (50)
         self.lives_show = 3
         self.score_count = 0
         self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
@@ -475,7 +477,11 @@ class MyGame(arcade.Window):
         self.player_sprite_list.draw()
 
         # Put the text on the screen.
-        output = f"Lifes left: {self.lives_show}"
+        # Lives left shows the lives the user has at the time, starting with the defined number (3).
+        # Score shows the summed up score, starting with the defined score (0).
+        # Asteroid count shows the number of asteroids at the screen.
+
+        output = f"Lives left: {self.lives_show}"
         arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
 
         output = f"Score: {self.score_count}"
@@ -528,9 +534,10 @@ class MyGame(arcade.Window):
 
     def split_asteroid(self, asteroid: AsteroidSprite):
         """ Split an asteroid into chunks. """
+        # When asteroids split, (50) points are added to the players score.
         x = asteroid.center_x
         y = asteroid.center_y
-        self.score_count +=1
+        self.score_count +=50
 
 
         if asteroid.size == 4:
@@ -633,6 +640,7 @@ class MyGame(arcade.Window):
 
             if not self.player_sprite.respawning:
                 asteroids = arcade.check_for_collision_with_list(self.player_sprite, self.asteroid_list)
+                #After a collision, one life will be taken away from the players lives.
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
