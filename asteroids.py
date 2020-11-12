@@ -613,13 +613,6 @@ class MyGame(arcade.Window):
                     else:
                         self.game_over = True
 
-                    # Zeige Game Over Text, sobald Game_over = True ist
-                    while self.game_over:
-                        arcade.start_render()
-                        arcade.draw_text("Du hast verloren\nChristian!\n", start_x, start_y, arcade.color.WHITE,
-                                         font_size=100, align="center")
-                        arcade.finish_render()
-
 
 
 
