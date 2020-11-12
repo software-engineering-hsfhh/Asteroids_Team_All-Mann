@@ -5,11 +5,14 @@ Shoot space rocks in this demo program created with
 Python and the Arcade library.
 
 Artwork from http://kenney.nl
+test 
 
 If Python and Arcade are installed, this example can be run from the command line with:
 python -m arcade.examples.asteroid_smasher
 """
+import random
 import math
+import arcade
 import os
 import random
 from typing import cast
@@ -26,10 +29,11 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-
+NUMBER_OF_STARS = 60
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
+
     def update(self):
         """ Move the sprite """
         super().update()
@@ -45,6 +49,7 @@ class ShipSprite(arcade.Sprite):
 
     Derives from arcade.Sprite.
     """
+
     def __init__(self, filename, scale):
         """ Set up the space ship. """
 
@@ -147,8 +152,8 @@ class AsteroidSprite(arcade.Sprite):
 
 
 class Star:
-
-    def __init__(self, position_x, position_y, change_x, change_y, radius, color):
+    # star class for the background
+    def __init__(self, position_x, position_y, radius, color):
         self.position_x = position_x
         self.position_y = position_y
         self.change_x = change_x
@@ -162,8 +167,7 @@ class Star:
         arcade.draw_circle_filled(self.position_x, self.position_y, self.radius, self.color)
 
     def reset_pos(self):
-
-        # Reset the coin to a random spot above the screen
+        # Reset the stars to a random spot above the screen
         self.position_y = random.randrange(SCREEN_HEIGHT + 20,
                                          SCREEN_HEIGHT + 100)
         self.position_x = random.randrange(SCREEN_WIDTH)
@@ -174,7 +178,7 @@ class Star:
         self.position_y -= 1
         self.position_x -= 0
 
-        # See if the star has fallen off the bottom of the screen.
+        # See if the stars has fallen off the bottom of the screen.
         # If so, reset it.
         if self.position_y < 0:
             self.reset_pos()
@@ -414,6 +418,24 @@ class MyGame(arcade.Window):
         # Sounds
         # TODO: load sounds
 
+        self.star_list = []
+
+        color_list = [
+            arcade.color.BLUE,
+            arcade.color.WHITE,
+            arcade.color.CELESTIAL_BLUE
+        ]
+
+        for i in range(NUMBER_OF_STARS):
+            position_x = random.randrange(SCREEN_WIDTH)
+            position_y = random.randrange(SCREEN_HEIGHT)
+            radius = random.randrange(1, 2, 3)
+            color = random.choice(color_list)
+
+            star = Star(position_x, position_y, radius, color)
+
+            self.star_list.append(star)
+
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
 
@@ -511,7 +533,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-
+        self.score += 50
 
         if asteroid.size == 4:
             for i in range(3):
@@ -593,7 +615,6 @@ class MyGame(arcade.Window):
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
-                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
