@@ -33,10 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Kartoffel kleiner">
-      <change beforePath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Asteroids_Team_AllMann.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
     </list>
 >>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603977726640</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge 2 (Schießen &amp; Sounds)">
+      <created>1605207358349</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605207358349</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
 >>>>>>> origin/main
     <servers />
   </component>
@@ -287,7 +291,8 @@
     <MESSAGE value="Musik" />
     <MESSAGE value="Pommes" />
     <MESSAGE value="Kartoffel kleiner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kartoffel kleiner" />
+    <MESSAGE value="Merge 2 (Schießen &amp; Sounds)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge 2 (Schießen &amp; Sounds)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="144" y="115" key="DiffContextDialog" timestamp="1603977305688">
@@ -315,16 +320,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131454821" />
-    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1603977729763">
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1605207364447">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
     <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1603912198046" />
-    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1603977729763" />
-    <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1605207364447" />
+    <state x="884" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605210009516">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132613057" />
+    <state x="884" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1605210009516" />
     <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603357142571">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
