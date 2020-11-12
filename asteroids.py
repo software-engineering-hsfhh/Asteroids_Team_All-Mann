@@ -28,6 +28,33 @@ BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 NUMBER_OF_STARS = 60
 
+#Instruction view
+class InstructionView(arcade.View):
+    """ View to show instructions """
+
+    def __init__(self):
+        """ This is run once when we switch to this view """
+        super().__init__()
+        self.texture = arcade.load_texture("Oktoberfest.jpeg")
+
+        # Reset the viewport, necessary if we have a scrolling game and we need
+        # to reset the viewport back to the start so we can see what we draw.
+        arcade.set_viewport(0, SCREEN_WIDTH - 1, 0, SCREEN_HEIGHT - 1)
+
+    def on_draw(self):
+        """ Draw this view """
+        arcade.start_render()
+        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
+                                SCREEN_WIDTH, SCREEN_HEIGHT)
+
+
+    def on_key_press(self, symbol, modifiers):
+        """ If the user presses ENTER, start the game. """
+        if symbol == arcade.key.ENTER:
+            game_view = MyGame()
+            game_view.start_new_game()
+            self.window.show_view(game_view)
+
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
     def update(self):
@@ -306,6 +333,10 @@ class MyGame(arcade.Window):
             self.player_sprite.thrust = 0.15
         elif symbol == arcade.key.DOWN:
             self.player_sprite.thrust = -.2
+        elif symbol == arcade.key.P:
+                # pass self, the current view, to preserve this view's state
+            pause = PauseView(self)
+            self.window.show_view(pause)
 
     def on_key_release(self, symbol, modifiers):
         """ Called whenever a key is released. """
@@ -419,6 +450,42 @@ class MyGame(arcade.Window):
                                          arcade.color.ANTIQUE_WHITE, 24)
                         arcade.finish_render()
 
+class PauseView(arcade.View):
+    def __init__(self, game_view):
+        super().__init__()
+        self.game_view = game_view
+
+    def on_show(self):
+        arcade.set_background_color(arcade.color.LIGHT_BLUE)
+
+    def on_draw(self):
+        arcade.start_render()
+
+        # Draw player, for effect, on pause screen.
+        # The previous View (MyGame) was passed in
+        # and saved in self.game_view.
+        player_sprite = self.game_view.player_sprite
+        player_sprite.draw()
+
+        # draw an filter over him
+        arcade.draw_lrtb_rectangle_filled(left=player_sprite.left,
+                                          right=player_sprite.right,
+                                          top=player_sprite.top,
+                                          bottom=player_sprite.bottom,
+                                          color=arcade.color.LIGHT_BLUE + (200,))
+
+        arcade.draw_text("PAUSIERT", SCREEN_WIDTH/2, SCREEN_HEIGHT/2+50,
+                         arcade.color.BLACK, font_size=50, anchor_x="center")
+
+        # Show tip to return or reset
+        arcade.draw_text("Drücke P, um zurückzukehren", SCREEN_WIDTH/2, SCREEN_HEIGHT/2,
+                         arcade.color.BLACK, font_size=20, anchor_x="center")
+
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.P:   # resume game
+            self.window.show_view(self.game_view)
+
 
 
 
@@ -427,6 +494,12 @@ def main():
     """ Start the game """
     window = MyGame()
     window.start_new_game()
+
+def main():
+    """ Main method """
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen= True)
+    start_view = InstructionView()
+    window.show_view(start_view)
     arcade.run()
 
 
