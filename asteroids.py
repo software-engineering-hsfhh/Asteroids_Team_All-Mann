@@ -242,7 +242,7 @@ class MyGame(arcade.Window):
         background_sound = arcade.load_sound("bayerischemusik.wav")
         arcade.play_sound(background_sound, 0.10)
 
-        # Use Threading to create Timer to play the background sound again
+        # Use Threading to create Timer to play background sound again
         import threading
         def bavarianmusic_again():
             arcade.play_sound(background_sound, 0.10)
