@@ -26,7 +26,7 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-NUMBER_OF_STARS = 60
+NUMBER_OF_STARS = 101
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
@@ -72,7 +72,7 @@ class ShipSprite(arcade.Sprite):
         self.center_x = SCREEN_WIDTH / 2
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
-        self.respawn_timer = 20
+        self.respawn_timer = 10
 
     def update(self):
         """
@@ -82,6 +82,7 @@ class ShipSprite(arcade.Sprite):
             self.respawning += 1
             self.alpha = self.respawning
             if self.respawning > 250:
+                arcade.finish_render()
                 self.respawning = 0
                 self.alpha = 255
         if self.speed > 0:
@@ -150,6 +151,7 @@ class Star:
         self.position_y = position_y
         self.radius = radius
         self.color = color
+        self.start_position = position_x, position_y
 
     def draw(self):
         # Draw the star with the instance variables we have
@@ -162,6 +164,7 @@ class Star:
         self.position_x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
+
         # Move the stars
         self.position_y -= 1
         self.position_x -= 0
@@ -175,40 +178,12 @@ class Star:
             self.reset_pos()
 
 
-#Instruction view
-class InstructionView(arcade.View):
-    """ View to show instructions """
-
-    def __init__(self):
-        """ This is run once when we switch to this view """
-        super().__init__()
-        self.texture = arcade.load_texture("Oktoberfest.png")
-
-        # Reset the viewport, necessary if we have a scrolling game and we need
-        # to reset the viewport back to the start so we can see what we draw.
-        arcade.set_viewport(0, SCREEN_WIDTH - 1, 0, SCREEN_HEIGHT - 1)
-
-    def on_draw(self):
-        """ Draw this view """
-        arcade.start_render()
-        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
-                                SCREEN_WIDTH, SCREEN_HEIGHT)
-
-
-    def on_key_press(self, symbol, modifiers):
-        """ If the user presses ENTER, start the game. """
-        if symbol == arcade.key.ENTER:
-            game_view = MyGame()
-            game_view.start_new_game()
-            self.window.show_view(game_view)
-
 class MyGame(arcade.Window):
     """ Main application class. """
 
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen=True)
         arcade.set_background_color(arcade.csscolor.BLACK)
-
 
         # Set the working directory (where we expect to find files) to the same
         # directory this .py file is in. You can leave this out of your own
@@ -232,8 +207,6 @@ class MyGame(arcade.Window):
         self.player_sprite = None
         self.lives = 0
 
-        # Sounds
-        # TODO: load sounds
 
         self.star_list = []
 
@@ -252,6 +225,30 @@ class MyGame(arcade.Window):
             star = Star(position_x, position_y, radius, color)
 
             self.star_list.append(star)
+        # Sounds
+        # Load and play a background sound
+        background_sound = arcade.load_sound("bayerischemusik.wav")
+        arcade.play_sound(background_sound, 0.10)
+
+        # Use Threading to create Timer to play background sound again
+        import threading
+        def bavarianmusic_again():
+            arcade.play_sound(background_sound, 0.10)
+
+        t = threading.Timer(193.1, bavarianmusic_again)
+        t.start()
+        print("Start Timer")
+
+        t = threading.Timer(386.1, bavarianmusic_again)
+        t.start()
+        print("Start Timer2")
+
+        # Load and play laser sound
+        self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
+        self.hit_sound1 = arcade.load_sound(":resources:sounds/explosion1.wav")
+        self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
+        self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
+        self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -266,12 +263,10 @@ class MyGame(arcade.Window):
         self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.score = 3
+        self.score = 0
         self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
-
-        # ToDo: Set up the little icons that represent the player lives.
 
         # Make the asteroids
         image_list = ("Potato2.png",
@@ -309,12 +304,19 @@ class MyGame(arcade.Window):
 
         # Draw all the sprites.
         self.asteroid_list.draw()
+        self.ship_life_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
-        self.ship_life_list.draw()
 
         # Put the text on the screen.
-        output = f"Lifes left: {self.score}"
+        # Lives left shows the lives the user has at the time, starting with the defined number (3).
+        # Score shows the summed up score, starting with the defined score (0).
+        # Asteroid count shows the number of asteroids at the screen.
+
+        output = f"Lives left: {self.lives}"
+        arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
+
+        output = f"Score: {self.score}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
@@ -322,9 +324,25 @@ class MyGame(arcade.Window):
 
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
-        if not self.player_sprite.respawning and symbol == arcade.key.SPACE:
-            # TODO: # Shoot if the player hit the space bar and we aren't respawning.
-            pass
+        # Shoot if the player hit the space bar and we aren't respawning.
+        if symbol == arcade.key.SPACE:
+            bullet_sprite = TurningSprite(":resources:images/space_shooter/laserBlue01.png", SCALE)
+            bullet_sprite.guid = "Bullet"
+
+            bullet_speed = 13
+            bullet_sprite.change_y = \
+                math.cos(math.radians(self.player_sprite.angle)) * bullet_speed
+            bullet_sprite.change_x = \
+                -math.sin(math.radians(self.player_sprite.angle)) \
+                * bullet_speed
+
+            bullet_sprite.center_x = self.player_sprite.center_x
+            bullet_sprite.center_y = self.player_sprite.center_y
+            bullet_sprite.update()
+
+            self.bullet_list.append(bullet_sprite)
+
+            arcade.play_sound(self.laser_sound)
 
         if symbol == arcade.key.LEFT:
             self.player_sprite.change_angle = 3
@@ -350,6 +368,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
+        self.score +=50
 
 
         if asteroid.size == 4:
@@ -371,6 +390,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 3
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound1.play()
 
         elif asteroid.size == 3:
             for i in range(3):
@@ -380,7 +400,6 @@ class MyGame(arcade.Window):
 
                 enemy_sprite = AsteroidSprite(image_list[image_no],
                                               SCALE * 1.5)
-
                 enemy_sprite.center_y = y
                 enemy_sprite.center_x = x
 
@@ -391,6 +410,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 2
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound2.play()
 
         elif asteroid.size == 2:
             for i in range(3):
@@ -411,9 +431,10 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 1
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound3.play()
 
         elif asteroid.size == 1:
-            pass
+            self.hit_sound4.play()
 
     def on_update(self, x):
         """ Move everything """
@@ -425,28 +446,60 @@ class MyGame(arcade.Window):
 
         if not self.game_over:
             self.asteroid_list.update()
+            self.bullet_list.update()
             self.player_sprite_list.update()
 
+            for bullet in self.bullet_list:
+                asteroids = arcade.check_for_collision_with_list(bullet, self.asteroid_list)
+
+                for asteroid in asteroids:
+                    self.split_asteroid(cast(AsteroidSprite, asteroid))  # expected AsteroidSprite, got Sprite instead
+                    asteroid.remove_from_sprite_lists()
+                    bullet.remove_from_sprite_lists()
+
+                # Remove bullet if it goes off-screen
+                size = max(bullet.width, bullet.height)
+                if bullet.center_x < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_x > SCREEN_WIDTH + size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y > SCREEN_HEIGHT + size:
+                    bullet.remove_from_sprite_lists()
+
+            # After a collision, one life will be taken away from the players lives.
             if not self.player_sprite.respawning:
                 asteroids = arcade.check_for_collision_with_list(self.player_sprite, self.asteroid_list)
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
-                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        output_crash = "Crash!"
-                        arcade.draw_text(output_crash, 150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
+
+                        # Zeige "Crash!" Text an, sobald der Spieler mit einem Asteroiden kollidiert.
+                        #Zeige "Crash!" so lange an, bis i=20 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
+                        i = 0.0
+                        while i <= 20:
+                            i += 0.1
+                            start_x = SCREEN_WIDTH / 2
+                            start_y = SCREEN_HEIGHT / 2
+                            arcade.draw_text("Crash!", start_x, start_y,
+                                             arcade.color.ANTIQUE_WHITE, 120, rotation=15)
+                            arcade.finish_render()
+
 
                     else:
                         self.game_over = True
-                        arcade.draw_text("Game over!",
-                                         150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
-
+         # Zeige Game Over Text, sobald Game_over = True ist
+        if self.game_over == True:
+                    arcade.start_render()
+                    start_x = 200
+                    start_y = 200
+                    arcade.draw_text("Du hast verloren\nChristian!\n", start_x, start_y, arcade.color.WHITE,
+                                     font_size=100, align="center")
+                    arcade.finish_render()
 
 
 
@@ -455,12 +508,6 @@ def main():
     """ Start the game """
     window = MyGame()
     window.start_new_game()
-
-def main():
-    """ Main method """
-    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen= True)
-    start_view = InstructionView()
-    window.show_view(start_view)
     arcade.run()
 
 
