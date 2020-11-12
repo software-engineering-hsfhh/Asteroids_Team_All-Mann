@@ -174,6 +174,34 @@ class Star:
         if self.position_x < 0:
             self.reset_pos()
 
+
+#Instruction view
+class InstructionView(arcade.View):
+    """ View to show instructions """
+
+    def __init__(self):
+        """ This is run once when we switch to this view """
+        super().__init__()
+        self.texture = arcade.load_texture("Oktoberfest.png")
+
+        # Reset the viewport, necessary if we have a scrolling game and we need
+        # to reset the viewport back to the start so we can see what we draw.
+        arcade.set_viewport(0, SCREEN_WIDTH - 1, 0, SCREEN_HEIGHT - 1)
+
+    def on_draw(self):
+        """ Draw this view """
+        arcade.start_render()
+        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
+                                SCREEN_WIDTH, SCREEN_HEIGHT)
+
+
+    def on_key_press(self, symbol, modifiers):
+        """ If the user presses ENTER, start the game. """
+        if symbol == arcade.key.ENTER:
+            game_view = MyGame()
+            game_view.start_new_game()
+            self.window.show_view(game_view)
+
 class MyGame(arcade.Window):
     """ Main application class. """
 
@@ -427,6 +455,12 @@ def main():
     """ Start the game """
     window = MyGame()
     window.start_new_game()
+
+def main():
+    """ Main method """
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen= True)
+    start_view = InstructionView()
+    window.show_view(start_view)
     arcade.run()
 
 

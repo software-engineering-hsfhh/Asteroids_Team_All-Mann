@@ -16,17 +16,11 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:development_new" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Kartoffel kleiner">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,13 +30,15 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fb08a42bbf92243c76226b6af1a6d49de31603e2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1j6dI0V78KHxSVi7szPokrBmENm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -168,9 +164,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Kartoffel kleiner" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="144" y="115" key="DiffContextDialog" timestamp="1603977305688">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="144" y="100" width="1152" height="720" key="DiffContextDialog" timestamp="1605209378746">
+      <screen x="0" y="23" width="1440" height="820" />
     </state>
+    <state x="144" y="100" width="1152" height="720" key="DiffContextDialog/0.23.1440.820@0.23.1440.820" timestamp="1605209378746" />
     <state x="144" y="115" key="DiffContextDialog/0.23.1440.830@0.23.1440.830" timestamp="1603977305688" />
     <state x="464" y="304" key="FileChooserDialogImpl" timestamp="1603131585376">
       <screen x="0" y="0" width="1440" height="900" />
