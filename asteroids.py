@@ -403,10 +403,10 @@ class MyGame(arcade.Window):
         self.ship_life_list = arcade.SpriteList()
 
         # Set up the player
-        self.lives_show = 0
+        self.lives_show = 3
         self.score_count = 0
         self.player_sprite = None
-        self.lives = 0
+        self.lives = 3
 
         # Sounds
         self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
@@ -640,7 +640,6 @@ class MyGame(arcade.Window):
 
             if not self.player_sprite.respawning:
                 asteroids = arcade.check_for_collision_with_list(self.player_sprite, self.asteroid_list)
-                #After a collision, one life will be taken away from the players lives.
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
