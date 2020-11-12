@@ -26,10 +26,7 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-#coins: Konstanten
-SPRITE_SCALING_COIN = 0.2
-COIN_COUNT = 50
-
+NUMBER_OF_STARS = 101
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
@@ -75,7 +72,7 @@ class ShipSprite(arcade.Sprite):
         self.center_x = SCREEN_WIDTH / 2
         self.center_y = SCREEN_HEIGHT / 2
         self.angle = 0
-        self.respawn_timer = 20
+        self.respawn_timer = 10
 
     def update(self):
         """
@@ -85,6 +82,7 @@ class ShipSprite(arcade.Sprite):
             self.respawning += 1
             self.alpha = self.respawning
             if self.respawning > 250:
+                arcade.finish_render()
                 self.respawning = 0
                 self.alpha = 255
         if self.speed > 0:
@@ -147,12 +145,10 @@ class AsteroidSprite(arcade.Sprite):
 
 
 class Star:
-
-    def __init__(self, position_x, position_y, change_x, change_y, radius, color):
+    # star class for the background
+    def __init__(self, position_x, position_y, radius, color):
         self.position_x = position_x
         self.position_y = position_y
-        self.change_x = change_x
-        self.change_y = change_y
         self.radius = radius
         self.color = color
         self.start_position = position_x, position_y
@@ -162,8 +158,7 @@ class Star:
         arcade.draw_circle_filled(self.position_x, self.position_y, self.radius, self.color)
 
     def reset_pos(self):
-
-        # Reset the coin to a random spot above the screen
+        # Reset the stars to a random spot above the screen
         self.position_y = random.randrange(SCREEN_HEIGHT + 20,
                                          SCREEN_HEIGHT + 100)
         self.position_x = random.randrange(SCREEN_WIDTH)
@@ -174,39 +169,13 @@ class Star:
         self.position_y -= 1
         self.position_x -= 0
 
-        # See if the star has fallen off the bottom of the screen.
+        # See if the stars has fallen off the bottom of the screen.
         # If so, reset it.
         if self.position_y < 0:
             self.reset_pos()
 
         if self.position_x < 0:
             self.reset_pos()
-
-SPRITE_SCALING = 1
-
-#coin: define class
-class Coin(arcade.Sprite):
-
-   # This class represents something the player collects.
-   def reset_pos(self):
-       # Reset the coin to a random spot above the screen
-       self.center_y = random.randrange(SCREEN_HEIGHT + 20,
-                                        SCREEN_HEIGHT + 100)
-       self.center_x = random.randrange(SCREEN_WIDTH)
-
-   def update(self):
-       # Move the coin
-       self.center_y -= 1
-
-       # See if the coin has fallen off the bottom of the screen.
-       # If so, reset it.
-       if self.top < 0:
-           self.reset_pos()
-
-# entfernen?
-# def __init__(self, filename, scale):
-#      Flip this once the coin has been collected.
-#     self.changed = False
 
 
 class MyGame(arcade.Window):
@@ -223,205 +192,6 @@ class MyGame(arcade.Window):
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
 
-        self.star_list = []
-
-        star = Star(720, 400, -3, -2, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 1, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 2, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, -2, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, -3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -3, 3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 3, -3, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # slower moving stars
-
-        star = Star(720, 400, -1, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, -1, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 0, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 1, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, -2, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -1, 2, 1, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 2, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 2, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, 1, -2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -2, 1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(720, 400, -2, -1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # stars not starting in the center
-        star = Star(500, 350, -3, -2, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(400, 310, 3, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(350, 260, -3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(200, 230, 1, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(600, 470, 1, 3, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(510, 540, 3, 1, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(370, 600, -3, 2, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(200, 690, 3, -2, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(750, 380, -3, -3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(800, 310, 3, 3, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(900, 250, -3, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1050, 150, 0, -3, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(1200, 620, 0, 3, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1340, 680, 3, 0, 1, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(1400, 710, -3, 3, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1410, 750, 3, -3, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        # slower moving stars
-
-        star = Star(800, 450, -1, -1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(990, 600, 1, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(1100, 680, -1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1250, 750, 0, -1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(850, 370, 0, 1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(970, 280, 1, 0, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1170, 170, -1, 1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(1350, 60, 1, -1, 2, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(600, 350, -1, -2, 3, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(540, 210, 1, 2, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(500, 180, -1, 2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(410, 100, 2, -1, 3, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(600, 470, 2, 1, 2, arcade.color.CELESTIAL_BLUE)
-        self.star_list.append(star)
-
-        star = Star(540, 610, 1, -2, 1, arcade.color.WHITE)
-        self.star_list.append(star)
-
-        star = Star(410, 690, -2, 1, 3, arcade.color.BLUE)
-        self.star_list.append(star)
-
-        star = Star(270, 730, -2, -1, 2, arcade.color.WHITE)
-        self.star_list.append(star)
-
         self.frame_count = 0
 
         self.game_over = False
@@ -432,16 +202,53 @@ class MyGame(arcade.Window):
         self.bullet_list = arcade.SpriteList()
         self.ship_life_list = arcade.SpriteList()
 
-
         # Set up the player
         self.score = 0
         self.player_sprite = None
         self.lives = 0
-        # coins
-        self.coin_sprite_list = arcade.SpriteList()
 
+
+        self.star_list = []
+
+        color_list = [
+            arcade.color.BLUE,
+            arcade.color.WHITE,
+            arcade.color.CELESTIAL_BLUE
+        ]
+
+        for i in range(NUMBER_OF_STARS):
+            position_x = random.randrange(SCREEN_WIDTH)
+            position_y = random.randrange(SCREEN_HEIGHT)
+            radius = random.randrange(1, 2, 3)
+            color = random.choice(color_list)
+
+            star = Star(position_x, position_y, radius, color)
+
+            self.star_list.append(star)
         # Sounds
-        # TODO: load sounds
+        # Load and play a background sound
+        background_sound = arcade.load_sound("bayerischemusik.wav")
+        arcade.play_sound(background_sound, 0.10)
+
+        # Use Threading to create Timer to play background sound again
+        import threading
+        def bavarianmusic_again():
+            arcade.play_sound(background_sound, 0.10)
+
+        t = threading.Timer(193.1, bavarianmusic_again)
+        t.start()
+        print("Start Timer")
+
+        t = threading.Timer(386.1, bavarianmusic_again)
+        t.start()
+        print("Start Timer2")
+
+        # Load and play laser sound
+        self.laser_sound = arcade.load_sound(":resources:sounds/hurt5.wav")
+        self.hit_sound1 = arcade.load_sound(":resources:sounds/explosion1.wav")
+        self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
+        self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
+        self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -454,32 +261,12 @@ class MyGame(arcade.Window):
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
         self.ship_life_list = arcade.SpriteList()
-        #coins
-        self.coin_sprite_list = arcade.SpriteList()
-
 
         # Set up the player
-        self.score = 3
+        self.score = 0
         self.player_sprite = ShipSprite("Adilette_1.png", SCALE)
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
-
-        #create the coins
-        for i in range(COIN_COUNT):
-            # Create the coin instance
-            coin = Coin ("Beer2.png", SPRITE_SCALING_COIN)
-           #entfernen?
-            #coin.width = 30
-            #coin.height = 30
-
-            # Position the coin
-            coin.center_x = random.randrange(SCREEN_WIDTH)
-            coin.center_y = random.randrange(SCREEN_HEIGHT)
-
-            # Add the coin to the lists
-            self.coin_sprite_list.append(coin)
-
-        # ToDo: Set up the little icons that represent the player lives.
 
         # Make the asteroids
         image_list = ("Potato2.png",
@@ -517,66 +304,45 @@ class MyGame(arcade.Window):
 
         # Draw all the sprites.
         self.asteroid_list.draw()
+        self.ship_life_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
-        self.ship_life_list.draw()
-        #coins
-        self.coin_sprite_list.draw()
-
 
         # Put the text on the screen.
+        # Lives left shows the lives the user has at the time, starting with the defined number (3).
+        # Score shows the summed up score, starting with the defined score (0).
+        # Asteroid count shows the number of asteroids at the screen.
+
+        output = f"Lives left: {self.lives}"
+        arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
+
         output = f"Score: {self.score}"
-        arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
-
-        # Put the text on the screen.
-
-        output = f"Lifes left: {self.score}"
         arcade.draw_text(output, 10, 70, arcade.color.WHITE, 13)
 
         output = f"Asteroid Count: {len(self.asteroid_list)}"
         arcade.draw_text(output, 10, 50, arcade.color.WHITE, 13)
 
-
-    def on_mouse_motion(self, x, y, dx, dy):
-        """
-        Called whenever the mouse moves.
-        """
-        self.player_sprite.center_x = x
-        self.player_sprite.center_y = y
-
-    def on_update(self, delta_time):
-        """ Movement and game logic """
-
-        # Call update on all sprites (The sprites don't do much in this
-        # example though.)
-        self.player_list.update()
-        self.coin_sprite_list.update()
-
-        # Generate a list of all sprites that collided with the player.
-        hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_sprie_list)
-
-        # Loop through each colliding sprite, change it, and add to the score.
-        for coin in hit_list:
-            coin.remove_from_sprite_lists()
-            self.score += 1
-
-            #remove??
-          #Have we collected this?
-         #  if not coin.changed:
-               # No? Then do so
-         #      coin.append_texture(arcade.load_texture(":resources:images/pinball/bumper.png"))
-         #      coin.set_texture(1)
-          #     coin.changed = True
-           #    coin.width = 30
-            #   coin.height = 30
-             #  self.score += 1
-
-
     def on_key_press(self, symbol, modifiers):
         """ Called whenever a key is pressed. """
-        if not self.player_sprite.respawning and symbol == arcade.key.SPACE:
-            # TODO: # Shoot if the player hit the space bar and we aren't respawning.
-            pass
+        # Shoot if the player hit the space bar and we aren't respawning.
+        if symbol == arcade.key.SPACE:
+            bullet_sprite = TurningSprite(":resources:images/space_shooter/laserBlue01.png", SCALE)
+            bullet_sprite.guid = "Bullet"
+
+            bullet_speed = 13
+            bullet_sprite.change_y = \
+                math.cos(math.radians(self.player_sprite.angle)) * bullet_speed
+            bullet_sprite.change_x = \
+                -math.sin(math.radians(self.player_sprite.angle)) \
+                * bullet_speed
+
+            bullet_sprite.center_x = self.player_sprite.center_x
+            bullet_sprite.center_y = self.player_sprite.center_y
+            bullet_sprite.update()
+
+            self.bullet_list.append(bullet_sprite)
+
+            arcade.play_sound(self.laser_sound)
 
         if symbol == arcade.key.LEFT:
             self.player_sprite.change_angle = 3
@@ -602,6 +368,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
+        self.score +=50
 
 
         if asteroid.size == 4:
@@ -623,6 +390,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 3
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound1.play()
 
         elif asteroid.size == 3:
             for i in range(3):
@@ -632,7 +400,6 @@ class MyGame(arcade.Window):
 
                 enemy_sprite = AsteroidSprite(image_list[image_no],
                                               SCALE * 1.5)
-
                 enemy_sprite.center_y = y
                 enemy_sprite.center_x = x
 
@@ -643,6 +410,7 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 2
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound2.play()
 
         elif asteroid.size == 2:
             for i in range(3):
@@ -663,9 +431,10 @@ class MyGame(arcade.Window):
                 enemy_sprite.size = 1
 
                 self.asteroid_list.append(enemy_sprite)
+                self.hit_sound3.play()
 
         elif asteroid.size == 1:
-            pass
+            self.hit_sound4.play()
 
     def on_update(self, x):
         """ Move everything """
@@ -677,33 +446,92 @@ class MyGame(arcade.Window):
 
         if not self.game_over:
             self.asteroid_list.update()
+            self.bullet_list.update()
             self.player_sprite_list.update()
 
+            for bullet in self.bullet_list:
+                asteroids = arcade.check_for_collision_with_list(bullet, self.asteroid_list)
+
+                for asteroid in asteroids:
+                    self.split_asteroid(cast(AsteroidSprite, asteroid))  # expected AsteroidSprite, got Sprite instead
+                    asteroid.remove_from_sprite_lists()
+                    bullet.remove_from_sprite_lists()
+
+                # Remove bullet if it goes off-screen
+                size = max(bullet.width, bullet.height)
+                if bullet.center_x < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_x > SCREEN_WIDTH + size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y < 0 - size:
+                    bullet.remove_from_sprite_lists()
+                if bullet.center_y > SCREEN_HEIGHT + size:
+                    bullet.remove_from_sprite_lists()
+
+            # After a collision, one life will be taken away from the players lives.
             if not self.player_sprite.respawning:
                 asteroids = arcade.check_for_collision_with_list(self.player_sprite, self.asteroid_list)
                 if len(asteroids) > 0:
                     if self.lives > 0:
                         self.lives -= 1
-                        self.score -= 1
                         self.player_sprite.respawn()
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
-                        output_crash = "Crash!"
-                        arcade.draw_text(output_crash, 150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
+
+                        # Zeige "Crash!" Text an, sobald der Spieler mit einem Asteroiden kollidiert.
+                        #Zeige "Crash!" so lange an, bis i=20 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
+                        i = 0.0
+                        while i <= 20:
+                            i += 0.1
+                            start_x = SCREEN_WIDTH / 2
+                            start_y = SCREEN_HEIGHT / 2
+                            arcade.draw_text("Crash!", start_x, start_y,
+                                             arcade.color.ANTIQUE_WHITE, 120, rotation=15)
+                            arcade.finish_render()
+
 
                     else:
                         self.game_over = True
-                        arcade.draw_text("Game over!",
-                                         150, 230,
-                                         arcade.color.ANTIQUE_WHITE, 24)
-                        arcade.finish_render()
+
+
+#Instruction view
+class InstructionView(arcade.View):
+    """ View to show instructions """
+
+    def __init__(self):
+        """ This is run once when we switch to this view """
+        super().__init__()
+        self.texture = arcade.load_texture("Oktoberfest.png")
+
+
+
+    def on_draw(self):
+        """ Draw this view """
+        arcade.start_render()
+        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
+                                SCREEN_WIDTH, SCREEN_HEIGHT)
+
+
+    def on_key_press(self, symbol, modifiers):
+        """ If the user presses ENTER, start the game. """
+        if symbol == arcade.key.ENTER:
+            game_view = MyGame()
+            game_view.start_new_game()
+            self.window.show_view(game_view)
+
+
 
 
 def main():
     """ Start the game """
     window = MyGame()
     window.start_new_game()
+
+def main():
+    """ Main method """
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen= True)
+    start_view = InstructionView()
+    window.show_view(start_view)
     arcade.run()
 
 

@@ -16,52 +16,26 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
+<<<<<<< HEAD
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4560215-517f-4d5e-bfe2-e7eb861a9209" name="Default Changelist" comment="Basti has entered the game!" />
+=======
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:Valentinas_Spielplatz" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Branch_Anni_Schiessen" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="Kartoffel kleiner">
-      <change afterPath="$PROJECT_DIR$/Beer2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_10_20,_14_36_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_10_20__14_36__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20,_11_50_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20,_19_23_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20,_20_04_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20,_20_05_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20,_20_15_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20,_20_16_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20__11_50__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20__19_23__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20__20_04__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20__20_05__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20__20_15__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_10_20__20_16__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_19_51_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_19_55_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_01_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_02_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_04_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_05_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_26_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_31_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20,_20_37_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__19_51__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__19_55__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_01__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_02__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_04__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_05__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_26__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_31__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_20__20_37__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asteroids.py" beforeDir="false" afterPath="$PROJECT_DIR$/asteroids.py" afterDir="false" />
     </list>
+>>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,12 +44,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="development_new" />
+<<<<<<< HEAD
+        <entry key="$PROJECT_DIR$" value="Testbranch" />
+=======
+        <entry key="$PROJECT_DIR$" value="fb08a42bbf92243c76226b6af1a6d49de31603e2" />
+>>>>>>> origin/main
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectId" id="1j6esfML9bY0S7ZXVeIGOaryIJc" />
+=======
   <component name="ProjectId" id="1j6dI0V78KHxSVi7szPokrBmENm" />
+>>>>>>> origin/main
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -83,20 +65,61 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< HEAD
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+>>>>>>> origin/main
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="b4560215-517f-4d5e-bfe2-e7eb861a9209" name="Default Changelist" comment="" />
+      <created>1603129180438</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603129180438</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Kann hier gepusht werden, ist die Frage.">
+      <created>1603129846397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603129846397</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Basti has entered the game!">
+      <created>1603130596502</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603130596502</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Basti has entered the game!">
+      <created>1603131099468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131099468</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Basti has entered the game!">
+      <created>1603131768085</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603131768085</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+=======
       <changelist id="7f7742e7-1d28-424e-8fae-52c5324a8064" name="Default Changelist" comment="" />
       <created>1603128394533</created>
       <option name="number" value="Default" />
@@ -166,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1603977726640</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge 2 (Schießen &amp; Sounds)">
+      <created>1605207358349</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605207358349</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+>>>>>>> origin/main
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,23 +205,84 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
+            <State />
+=======
             <State>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Valentinas_Spielplatz" />
+                        <option value="origin/Testbranch" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+>>>>>>> origin/main
           </value>
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Kann hier gepusht werden, ist die Frage." />
+    <MESSAGE value="Basti has entered the game!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basti has entered the game!" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="354" y="135" key="#Inspections" timestamp="1603132544769">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="354" y="135" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1603132544769" />
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603131535688">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131535688" />
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1603133693280">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603133693280" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1603133693278">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603133693278" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1603133693277">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603133693277" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1603133693279">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603133693279" />
+    <state x="144" y="79" key="MergeDialog" timestamp="1603131160327">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131160327" />
+    <state x="361" y="218" key="MultipleFileMergeDialog" timestamp="1603131167710">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="361" y="218" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1603131167710" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1603131333225">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131333225" />
+    <state x="100" y="100" width="1240" height="700" key="ShowDiffWithBranchDialog" timestamp="1603129607933">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="ShowDiffWithBranchDialog/0.0.1440.900@0.0.1440.900" timestamp="1603129607933" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603131781062">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131781062" />
+    <state x="533" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132628830">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132628830" />
+=======
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
@@ -199,7 +291,8 @@
     <MESSAGE value="Musik" />
     <MESSAGE value="Pommes" />
     <MESSAGE value="Kartoffel kleiner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kartoffel kleiner" />
+    <MESSAGE value="Merge 2 (Schießen &amp; Sounds)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge 2 (Schießen &amp; Sounds)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="144" y="115" key="DiffContextDialog" timestamp="1603977305688">
@@ -227,20 +320,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603131454821" />
-    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1603977729763">
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2" timestamp="1605207364447">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603131075055" />
     <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1603912198046" />
-    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1603977729763" />
-    <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603132613057">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="320" y="198" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1605207364447" />
+    <state x="884" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605210009516">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="884" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603132613057" />
-    <state x="338" y="179" key="git4idea.branch.GitSmartOperationDialog" timestamp="1605102339370">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="884" y="365" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1605210009516" />
+    <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603357142571">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="338" y="169" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1603357142571" />
-    <state x="338" y="179" key="git4idea.branch.GitSmartOperationDialog/0.23.1440.829@0.23.1440.829" timestamp="1605102339370" />
+>>>>>>> origin/main
   </component>
 </project>
