@@ -184,10 +184,6 @@ class InstructionView(arcade.View):
         super().__init__()
         self.texture = arcade.load_texture("Oktoberfest.png")
 
-        # Reset the viewport, necessary if we have a scrolling game and we need
-        # to reset the viewport back to the start so we can see what we draw.
-        arcade.set_viewport(0, SCREEN_WIDTH - 1, 0, SCREEN_HEIGHT - 1)
-
     def on_draw(self):
         """ Draw this view """
         arcade.start_render()
