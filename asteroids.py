@@ -538,42 +538,11 @@ class MyGame(arcade.Window):
                     else:
                         self.game_over = True
 
-
-# Instruction view
-class InstructionView(arcade.View):
-    """ View to show instructions """
-
-    def __init__(self):
-        """ This is run once when we switch to this view """
-        super().__init__()
-        self.texture = arcade.load_texture("Oktoberfest.png")
-
-    def on_draw(self):
-        """ Draw this view """
-        arcade.start_render()
-        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
-                                SCREEN_WIDTH, SCREEN_HEIGHT)
-
-    def on_key_press(self, symbol, modifiers):
-        """ If the user presses ENTER, start the game. """
-        if symbol == arcade.key.ENTER:
-            game_view = MyGame()
-            game_view.start_new_game()
-            self.window.show_view(game_view)
-
-
 def main():
     """ Start the game """
-    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen=True)
-    start_view = InstructionView()
-    window.show_view(start_view)
     arcade.run()
-
     window = MyGame()
     window.start_new_game()
-
-
-
 
 if __name__ == "__main__":
     main()
