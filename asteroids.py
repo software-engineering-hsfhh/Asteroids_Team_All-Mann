@@ -16,7 +16,7 @@ from typing import cast
 
 import arcade
 
-STARTING_ASTEROID_COUNT = 100
+STARTING_ASTEROID_COUNT = 10
 SCALE = 0.5
 OFFSCREEN_SPACE = 300
 SCREEN_WIDTH = 1440
@@ -68,7 +68,10 @@ class ShipSprite(arcade.Sprite):
         self.respawn()
 
     def respawn(self):
-        # 'respawning' is an invulnerability timer.
+        """
+        Called when we die and need to make a new ship.
+        'respawning' is an invulnerability timer.
+        """
         # If we are in the middle of respawning, this is non-zero.
         self.respawning = 1
         self.center_x = SCREEN_WIDTH / 2
@@ -231,6 +234,7 @@ class MyGame(arcade.Window):
         self.score = 0
         self.player_sprite = None
         self.lives = 0
+
 
         self.star_list = []
 
@@ -537,12 +541,24 @@ class MyGame(arcade.Window):
 
                     else:
                         self.game_over = True
+         # Zeige Game Over Text, sobald Game_over = True ist
+        if self.game_over == True:
+                    arcade.start_render()
+                    start_x = 200
+                    start_y = 200
+                    arcade.draw_text("Du hast verloren\nChristian!\n", start_x, start_y, arcade.color.WHITE,
+                                     font_size=100, align="center")
+                    arcade.finish_render()
+
+
+
 
 def main():
     """ Start the game """
-    arcade.run()
     window = MyGame()
     window.start_new_game()
+    arcade.run()
+
 
 if __name__ == "__main__":
     main()
