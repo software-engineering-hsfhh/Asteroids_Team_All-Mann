@@ -16,7 +16,7 @@ from typing import cast
 
 import arcade
 
-STARTING_ASTEROID_COUNT = 10
+STARTING_ASTEROID_COUNT = 30
 SCALE = 0.5
 OFFSCREEN_SPACE = 300
 SCREEN_WIDTH = 1440
@@ -27,7 +27,8 @@ RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
 NUMBER_OF_STARS = 100
-COIN_COUNT = 50
+SPRITE_SCALING_COIN = 0.2
+COIN_COUNT = 5
 
 
 class TurningSprite(arcade.Sprite):
@@ -191,13 +192,13 @@ class Coin(arcade.Sprite):
 
     def reset_pos(self):
         # Reset the coin to a random spot above the screen
-        self.position_x = random.randrange(SCREEN_WIDTH)
-        self.position_y = random.randrange(SCREEN_HEIGHT + 20,
+        self.center_x = random.randrange(SCREEN_WIDTH)
+        self.center_y = random.randrange(SCREEN_HEIGHT + 20,
                                            SCREEN_HEIGHT + 100)
 
     def update(self):
         # Move the coin
-        self.center_y -= 1
+        self.center_y -= 2
 
         # See if the coin has fallen off the bottom of the screen.
         # If so, reset it.
@@ -228,13 +229,15 @@ class MyGame(arcade.Window):
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
         self.ship_life_list = arcade.SpriteList()
-        self.coin_sprite_list = arcade.SpriteList()
+        self.coin_sprite_list = None
 
         # Set up the player
         self.score = 0
         self.player_sprite = None
         self.lives = 0
 
+        # Don't show the mouse cursor
+        self.set_mouse_visible(False)
 
         self.star_list = []
 
@@ -278,18 +281,6 @@ class MyGame(arcade.Window):
         self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
         self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
 
-        # Create the coins
-        for i in range(COIN_COUNT):
-            # Create the coin instance
-            # Coin image from kenney.nl
-            coin = Coin(":resources:images/items/coinGold.png", SPRITE_SCALING_COIN)
-
-            # Position the coin
-            coin.position_x = random.randrange(SCREEN_WIDTH)
-            coin.position_y = random.randrange(SCREEN_HEIGHT)
-
-            # Add the coin to the lists
-            self.coin_sprite_list.append(coin)
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -302,6 +293,7 @@ class MyGame(arcade.Window):
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
         self.ship_life_list = arcade.SpriteList()
+        self.coin_sprite_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
@@ -328,6 +320,19 @@ class MyGame(arcade.Window):
             enemy_sprite.change_angle = (random.random() - 0.5) * 2
             enemy_sprite.size = 4
             self.asteroid_list.append(enemy_sprite)
+
+            # Create the coins
+        for i in range(COIN_COUNT):
+            # Create the coin instance
+            # Coin image from kenney.nl
+            coin = Coin(":resources:images/items/coinGold.png", SPRITE_SCALING_COIN)
+
+            # Position the coin
+            coin.center_x = random.randrange(SCREEN_WIDTH)
+            coin.center_y = random.randrange(SCREEN_HEIGHT)
+
+            # Add the coin to the lists
+            self.coin_sprite_list.append(coin)
 
     def on_draw(self):
         """
@@ -493,6 +498,11 @@ class MyGame(arcade.Window):
         hit_list = arcade.check_for_collision_with_list(self.player_sprite,
                                                         self.coin_sprite_list)
 
+        # Loop through each colliding sprite, remove it, and add to the score.
+        for coin in hit_list:
+            coin.remove_from_sprite_lists()
+            self.score += 30
+
         if not self.game_over:
             self.asteroid_list.update()
             self.bullet_list.update()
@@ -549,8 +559,6 @@ class MyGame(arcade.Window):
                     arcade.draw_text("Du hast verloren\nChristian!\n", start_x, start_y, arcade.color.WHITE,
                                      font_size=100, align="center")
                     arcade.finish_render()
-
-
 
 
 def main():
