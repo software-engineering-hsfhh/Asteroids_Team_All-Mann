@@ -39,11 +39,6 @@ class TurningSprite(arcade.Sprite):
         super().update()
         self.angle = math.degrees(math.atan2(self.change_y, self.change_x))
 
-
-background_sound = arcade.load_sound("bayerischemusik.wav")
-arcade.play_sound(background_sound)
-
-
 class ShipSprite(arcade.Sprite):
     """
     Sprite that represents our space ship.
@@ -61,8 +56,8 @@ class ShipSprite(arcade.Sprite):
         # Angle comes in automatically from the parent class.
         self.thrust = 0
         self.speed = 0
-        self.max_speed = 4
-        self.drag = 0.05
+        self.max_speed = 7
+        self.drag = 0.1
         self.respawning = 0
 
         # Mark that we are respawning.
@@ -157,7 +152,7 @@ class Star:
         self.position_y = position_y
         self.radius = radius
         self.color = color
-        self.start_position = position_x, position_y
+
 
     def draw(self):
         # Draw the star with the instance variables we have
@@ -166,7 +161,7 @@ class Star:
     def reset_pos(self):
         # Reset the stars to a random spot above the screen
         self.position_y = random.randrange(SCREEN_HEIGHT + 20,
-                                           SCREEN_HEIGHT + 100)
+                                         SCREEN_HEIGHT + 100)
         self.position_x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
@@ -301,7 +296,7 @@ class MyGame(arcade.Window):
         self.player_sprite_list.append(self.player_sprite)
         self.lives = 3
 
-        # Make the asteroids
+        # Make the potatos
         image_list = ("Potato2.png",
                       "Potato1.png",
                       "Potato3.png",
@@ -344,7 +339,7 @@ class MyGame(arcade.Window):
 
         # This command has to happen before we start drawing
         arcade.start_render()
-
+        # Draw the Stars
         for star in self.star_list:
             star.draw()
 
@@ -358,7 +353,7 @@ class MyGame(arcade.Window):
         # Put the text on the screen.
         # Lives left shows the lives the user has at the time, starting with the defined number (3).
         # Score shows the summed up score, starting with the defined score (0).
-        # Asteroid count shows the number of asteroids at the screen.
+        # Potato count shows the number of potatos at the screen.
 
         output = f"Lives left: {self.lives}"
         arcade.draw_text(output, 10, 90, arcade.color.WHITE, 13)
@@ -399,7 +394,7 @@ class MyGame(arcade.Window):
             self.player_sprite.thrust = 0.15
         elif symbol == arcade.key.DOWN:
             self.player_sprite.thrust = -.2
-
+    # Control with Pfeiltasten
     def on_key_release(self, symbol, modifiers):
         """ Called whenever a key is released. """
         if symbol == arcade.key.LEFT:
@@ -415,7 +410,9 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
+        # Add 50 points when a potato splits into chips
         self.score += 50
+
 
         if asteroid.size == 4:
             for i in range(3):
@@ -484,17 +481,16 @@ class MyGame(arcade.Window):
 
     def on_update(self, x):
         """ Move everything """
-
+        # Update the Stars
         for star in self.star_list:
             star.update()
 
         self.frame_count += 1
 
-        # Call update on all sprites (The sprites don't do much in this
-        # example though.)
+        # Call update on the beer_coins
         self.coin_sprite_list.update()
 
-        # Generate a list of all sprites that collided with the player.
+        # Add the beer_coins to a list of items colliding with the player.
         hit_list = arcade.check_for_collision_with_list(self.player_sprite,
                                                         self.coin_sprite_list)
 
@@ -537,8 +533,7 @@ class MyGame(arcade.Window):
                         self.split_asteroid(cast(AsteroidSprite, asteroids[0]))
                         asteroids[0].remove_from_sprite_lists()
 
-                        # Zeige "Crash!" Text an, sobald der Spieler mit einem Asteroiden kollidiert.
-                        # Zeige "Crash!" so lange an, bis i=20 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
+                        # Show "Crash!" for a few seconds when the player collides with a potato
                         i = 0.0
                         while i <= 20:
                             i += 0.1
@@ -551,7 +546,7 @@ class MyGame(arcade.Window):
 
                     else:
                         self.game_over = True
-         # Zeige Game Over Text, sobald Game_over = True ist
+         # Show Game_Over Screen when self.game_over is True
         if self.game_over == True:
                     arcade.start_render()
                     start_x = 200
