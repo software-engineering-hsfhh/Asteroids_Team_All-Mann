@@ -16,7 +16,7 @@ from typing import cast
 
 import arcade
 
-STARTING_ASTEROID_COUNT = 10
+STARTING_ASTEROID_COUNT = 100
 SCALE = 0.5
 OFFSCREEN_SPACE = 300
 SCREEN_WIDTH = 1440
@@ -26,14 +26,18 @@ LEFT_LIMIT = -OFFSCREEN_SPACE
 RIGHT_LIMIT = SCREEN_WIDTH + OFFSCREEN_SPACE
 BOTTOM_LIMIT = -OFFSCREEN_SPACE
 TOP_LIMIT = SCREEN_HEIGHT + OFFSCREEN_SPACE
-NUMBER_OF_STARS = 101
+NUMBER_OF_STARS = 100
+COIN_COUNT = 50
+
 
 class TurningSprite(arcade.Sprite):
     """ Sprite that sets its angle to the direction it is traveling in. """
+
     def update(self):
         """ Move the sprite """
         super().update()
         self.angle = math.degrees(math.atan2(self.change_y, self.change_x))
+
 
 background_sound = arcade.load_sound("bayerischemusik.wav")
 arcade.play_sound(background_sound)
@@ -45,6 +49,7 @@ class ShipSprite(arcade.Sprite):
 
     Derives from arcade.Sprite.
     """
+
     def __init__(self, filename, scale):
         """ Set up the space ship. """
 
@@ -63,10 +68,7 @@ class ShipSprite(arcade.Sprite):
         self.respawn()
 
     def respawn(self):
-        """
-        Called when we die and need to make a new ship.
-        'respawning' is an invulnerability timer.
-        """
+        # 'respawning' is an invulnerability timer.
         # If we are in the middle of respawning, this is non-zero.
         self.respawning = 1
         self.center_x = SCREEN_WIDTH / 2
@@ -160,7 +162,7 @@ class Star:
     def reset_pos(self):
         # Reset the stars to a random spot above the screen
         self.position_y = random.randrange(SCREEN_HEIGHT + 20,
-                                         SCREEN_HEIGHT + 100)
+                                           SCREEN_HEIGHT + 100)
         self.position_x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
@@ -175,6 +177,28 @@ class Star:
             self.reset_pos()
 
         if self.position_x < 0:
+            self.reset_pos()
+
+
+class Coin(arcade.Sprite):
+    """
+    This class represents the coins on our screen. It is a child class of
+    the arcade library's "Sprite" class.
+    """
+
+    def reset_pos(self):
+        # Reset the coin to a random spot above the screen
+        self.position_x = random.randrange(SCREEN_WIDTH)
+        self.position_y = random.randrange(SCREEN_HEIGHT + 20,
+                                           SCREEN_HEIGHT + 100)
+
+    def update(self):
+        # Move the coin
+        self.center_y -= 1
+
+        # See if the coin has fallen off the bottom of the screen.
+        # If so, reset it.
+        if self.top < 0:
             self.reset_pos()
 
 
@@ -201,12 +225,12 @@ class MyGame(arcade.Window):
         self.asteroid_list = arcade.SpriteList()
         self.bullet_list = arcade.SpriteList()
         self.ship_life_list = arcade.SpriteList()
+        self.coin_sprite_list = arcade.SpriteList()
 
         # Set up the player
         self.score = 0
         self.player_sprite = None
         self.lives = 0
-
 
         self.star_list = []
 
@@ -249,6 +273,19 @@ class MyGame(arcade.Window):
         self.hit_sound2 = arcade.load_sound(":resources:sounds/explosion2.wav")
         self.hit_sound3 = arcade.load_sound(":resources:sounds/hit1.wav")
         self.hit_sound4 = arcade.load_sound(":resources:sounds/hit2.wav")
+
+        # Create the coins
+        for i in range(COIN_COUNT):
+            # Create the coin instance
+            # Coin image from kenney.nl
+            coin = Coin(":resources:images/items/coinGold.png", SPRITE_SCALING_COIN)
+
+            # Position the coin
+            coin.position_x = random.randrange(SCREEN_WIDTH)
+            coin.position_y = random.randrange(SCREEN_HEIGHT)
+
+            # Add the coin to the lists
+            self.coin_sprite_list.append(coin)
 
     def start_new_game(self):
         """ Set up the game and initialize the variables. """
@@ -307,6 +344,7 @@ class MyGame(arcade.Window):
         self.ship_life_list.draw()
         self.bullet_list.draw()
         self.player_sprite_list.draw()
+        self.coin_sprite_list.draw()
 
         # Put the text on the screen.
         # Lives left shows the lives the user has at the time, starting with the defined number (3).
@@ -368,8 +406,7 @@ class MyGame(arcade.Window):
         """ Split an asteroid into chunks. """
         x = asteroid.center_x
         y = asteroid.center_y
-        self.score +=50
-
+        self.score += 50
 
         if asteroid.size == 4:
             for i in range(3):
@@ -444,6 +481,14 @@ class MyGame(arcade.Window):
 
         self.frame_count += 1
 
+        # Call update on all sprites (The sprites don't do much in this
+        # example though.)
+        self.coin_sprite_list.update()
+
+        # Generate a list of all sprites that collided with the player.
+        hit_list = arcade.check_for_collision_with_list(self.player_sprite,
+                                                        self.coin_sprite_list)
+
         if not self.game_over:
             self.asteroid_list.update()
             self.bullet_list.update()
@@ -479,7 +524,7 @@ class MyGame(arcade.Window):
                         asteroids[0].remove_from_sprite_lists()
 
                         # Zeige "Crash!" Text an, sobald der Spieler mit einem Asteroiden kollidiert.
-                        #Zeige "Crash!" so lange an, bis i=20 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
+                        # Zeige "Crash!" so lange an, bis i=20 erreicht hat (Wusste nicht, wie man das mit Zeit macht)
                         i = 0.0
                         while i <= 20:
                             i += 0.1
@@ -494,7 +539,7 @@ class MyGame(arcade.Window):
                         self.game_over = True
 
 
-#Instruction view
+# Instruction view
 class InstructionView(arcade.View):
     """ View to show instructions """
 
@@ -503,14 +548,11 @@ class InstructionView(arcade.View):
         super().__init__()
         self.texture = arcade.load_texture("Oktoberfest.png")
 
-
-
     def on_draw(self):
         """ Draw this view """
         arcade.start_render()
         self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
                                 SCREEN_WIDTH, SCREEN_HEIGHT)
-
 
     def on_key_press(self, symbol, modifiers):
         """ If the user presses ENTER, start the game. """
@@ -520,19 +562,17 @@ class InstructionView(arcade.View):
             self.window.show_view(game_view)
 
 
-
-
 def main():
     """ Start the game """
-    window = MyGame()
-    window.start_new_game()
-
-def main():
-    """ Main method """
-    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen= True)
+    window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE, fullscreen=True)
     start_view = InstructionView()
     window.show_view(start_view)
     arcade.run()
+
+    window = MyGame()
+    window.start_new_game()
+
+
 
 
 if __name__ == "__main__":
